@@ -13,6 +13,7 @@ from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
+from . import analytics
 from .agents import FraudOrchestrator
 from .db import engine
 from .embeddings import embeddings_ready, similar_cases
@@ -176,6 +177,57 @@ def similar(txn: TransactionIn, user: str = Depends(get_current_user), k: int = 
     if not embeddings_ready():
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "Vector store not built yet")
     return {"query_by": user, "k": k, "similar_cases": similar_cases(txn.model_dump(), k=k)}
+
+
+# ─────────────────────── Investigation layer (Postgres history) ───────────────────────
+import re
+
+_ACCT_RE = re.compile(r"^ACC-\d{6}$")
+_UUID_RE = re.compile(r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-"
+                      r"[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
+
+
+@app.get("/overview")
+def overview(user: str = Depends(get_current_user)):
+    """Real KPIs + fraud distributions computed from the Postgres history store."""
+    return analytics.overview()
+
+
+@app.get("/accounts/fraud")
+def accounts_fraud(user: str = Depends(get_current_user)):
+    """The detected-fraudulent-account list (one entry per account, aggregated)."""
+    return {"accounts": analytics.fraud_accounts()}
+
+
+@app.get("/accounts/{account_id}")
+def account_detail(account_id: str, user: str = Depends(get_current_user)):
+    """Why an account was flagged + its 39-day historical context."""
+    if not _ACCT_RE.match(account_id):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "account_id must look like ACC-000123")
+    detail = analytics.account_detail(account_id)
+    if detail is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, f"No account {account_id}")
+    return detail
+
+
+@app.get("/lookup")
+def lookup(
+    account_id: str | None = None,
+    transaction_id: str | None = None,
+    user: str = Depends(get_current_user),
+):
+    """Manual investigation by primary key — accounts.account_id OR transactions.transaction_id."""
+    if not account_id and not transaction_id:
+        raise HTTPException(status.HTTP_400_BAD_REQUEST,
+                            "Provide a primary key: account_id or transaction_id")
+    if account_id and not _ACCT_RE.match(account_id.strip()):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "account_id must look like ACC-000123")
+    if transaction_id and not _UUID_RE.match(transaction_id.strip()):
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, "transaction_id must be a UUID")
+    result = analytics.lookup(account_id=account_id, transaction_id=transaction_id)
+    if result is None:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "No matching account or transaction")
+    return result
 
 
 @app.get("/vector/status")
