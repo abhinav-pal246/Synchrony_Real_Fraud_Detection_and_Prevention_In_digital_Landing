@@ -1,0 +1,28 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ── Environment / secrets (never commit real credentials) ──
+.env
+.env.local
+*.pem
+*.key
+
+# ── Node (frontend keeps its own .gitignore too) ──
+node_modules/
+
+# ── Builds ──
+dist/
+build/
+
+# ── AWS ──
+.aws/
+
+# ── OS / editor ──
+.DS_Store
+.idea/
+.vscode/

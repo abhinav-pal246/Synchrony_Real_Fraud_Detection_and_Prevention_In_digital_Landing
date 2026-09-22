@@ -1,0 +1,97 @@
+# ─────────────────────────────────────────────────────────────
+# Synchrony Analytics — local development stack
+# The same containers we later run on a single EC2 instance.
+#   docker compose up        → start everything
+#   docker compose down      → stop (keeps data)
+#   docker compose down -v   → stop AND wipe data volumes
+# ─────────────────────────────────────────────────────────────
+
+services:
+  # ── PostgreSQL + pgvector (primary DB + graph embeddings) ──
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: synchrony-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-synchrony}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-synchrony}
+      POSTGRES_DB: ${POSTGRES_DB:-synchrony}
+    ports:
+      - "5433:5432"   # host 5433 → container 5432 (5432 was already in use on the host)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-synchrony} -d ${POSTGRES_DB:-synchrony}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis (velocity counters, session cache) ──
+  redis:
+    image: redis:7-alpine
+    container_name: synchrony-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Kafka (event streaming, KRaft mode — no Zookeeper) ──
+  kafka:
+    image: apache/kafka:3.8.1
+    container_name: synchrony-kafka
+    ports:
+      - "29092:29092"   # host access → localhost:29092
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  # ── FastAPI backend ──
+  backend:
+    build: ./backend
+    container_name: synchrony-backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://synchrony:synchrony@postgres:5432/synchrony}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      KAFKA_BOOTSTRAP: ${KAFKA_BOOTSTRAP:-kafka:9092}
+      # Security layer — credential lives in Postgres (users table), not here.
+      # Only the JWT signing key is configured via env.
+      JWT_SECRET: ${JWT_SECRET:-dev-insecure-change-me}
+      JWT_TTL_SECONDS: ${JWT_TTL_SECONDS:-3600}
+      # AI layer (AWS Bedrock — optional; falls back to template if unavailable)
+      AWS_REGION: ${AWS_REGION:-us-east-1}
+      BEDROCK_MODEL_ID: ${BEDROCK_MODEL_ID:-anthropic.claude-3-haiku-20240307-v1:0}
+    volumes:
+      - ./data:/data:ro                          # dataset for training (read-only)
+      - ./backend/ml/artifacts:/code/ml/artifacts  # trained model artifacts (persisted)
+      - ${HOME}/.aws:/root/.aws:ro               # AWS creds for Bedrock (read-only, host profile)
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+
+volumes:
+  pgdata:

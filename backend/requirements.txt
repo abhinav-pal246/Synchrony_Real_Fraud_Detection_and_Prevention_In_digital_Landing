@@ -1,0 +1,25 @@
+# Web framework
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+
+# Database layer
+sqlalchemy==2.0.36
+alembic==1.14.0
+pgvector==0.3.6
+
+# ML layer (local models — this is why FastAPI/Python over Spring Boot)
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# Security layer (JWT + bcrypt password hashing)
+PyJWT==2.9.0
+bcrypt==4.2.0
+
+# AI layer (AWS Bedrock)
+boto3==1.35.36
+
+# Dependency clients (used for the /health/deps connectivity check,
+# and by the real services we build in later phases)
+psycopg[binary]==3.2.3
+redis==5.2.1
+confluent-kafka==2.6.1

@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #F3F5F9;
+    color: #1E2A45;
+  }
+}
+
+@layer utilities {
+  @keyframes kenburns {
+    0%   { transform: scale(1)    translate(0, 0); }
+    100% { transform: scale(1.12) translate(-1.5%, -1.5%); }
+  }
+  .animate-kenburns {
+    animation: kenburns 7s ease-out forwards;
+  }
+
+  @keyframes heroFadeUp {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-hero-up {
+    animation: heroFadeUp 0.7s ease-out both;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-gray-600 hover:text-synchrony-navy transition-colors duration-150 px-1 py-0.5;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium
+           text-synchrony-slate hover:bg-synchrony-navy-light hover:text-white
+           transition-all duration-150 cursor-pointer;
+  }
+
+  .sidebar-link.active {
+    @apply bg-synchrony-yellow text-synchrony-navy-dark font-semibold;
+  }
+
+  .kpi-card {
+    @apply bg-white rounded-2xl p-5 shadow-card hover:shadow-card-hover transition-shadow duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-critical {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  .badge-high {
+    @apply badge bg-orange-100 text-orange-700;
+  }
+
+  .badge-medium {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-low {
+    @apply badge bg-green-100 text-green-700;
+  }
+}

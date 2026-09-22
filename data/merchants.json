@@ -1,0 +1,226 @@
+[
+  {
+    "merchant_id": "MER-85c8a2025f",
+    "merchant_name": "TJX Rewards Store",
+    "merchant_category_code": "5651",
+    "industry": "Retail & Apparel",
+    "partner": "TJX",
+    "onboarding_date": "2024-08-08T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-8bcfc6ed8a",
+    "merchant_name": "American Eagle",
+    "merchant_category_code": "5651",
+    "industry": "Retail & Apparel",
+    "partner": "AEO",
+    "onboarding_date": "2026-01-30T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-7a1938ffe3",
+    "merchant_name": "Old Navy Outlet",
+    "merchant_category_code": "5311",
+    "industry": "Retail & Apparel",
+    "partner": "Gap",
+    "onboarding_date": "2026-04-29T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-c997182d50",
+    "merchant_name": "Lowe's Home Center",
+    "merchant_category_code": "5211",
+    "industry": "Home Improvement",
+    "partner": "Lowe's",
+    "onboarding_date": "2024-04-25T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-02b6d49cea",
+    "merchant_name": "Ashley HomeStore",
+    "merchant_category_code": "5712",
+    "industry": "Home Furnishings",
+    "partner": "Ashley",
+    "onboarding_date": "2025-08-16T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-410ce50122",
+    "merchant_name": "Mattress Firm",
+    "merchant_category_code": "5712",
+    "industry": "Home Furnishings",
+    "partner": "MattressFirm",
+    "onboarding_date": "2025-09-16T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-8974406897",
+    "merchant_name": "Discount Tire",
+    "merchant_category_code": "5533",
+    "industry": "Automotive",
+    "partner": "DiscountTire",
+    "onboarding_date": "2025-10-08T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-c2b69d0e1c",
+    "merchant_name": "Shell Gas #4471",
+    "merchant_category_code": "5541",
+    "industry": "Automotive",
+    "partner": "Shell",
+    "onboarding_date": "2026-01-02T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-a8c98e660d",
+    "merchant_name": "QuickFuel Pump 12",
+    "merchant_category_code": "5541",
+    "industry": "Automotive",
+    "partner": "QuickFuel",
+    "onboarding_date": "2024-04-30T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-27e1927963",
+    "merchant_name": "Bright Smile Dental",
+    "merchant_category_code": "8021",
+    "industry": "Health & Wellness",
+    "partner": "CareCredit",
+    "onboarding_date": "2026-02-09T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-fff310ae39",
+    "merchant_name": "Valley Vision Optometry",
+    "merchant_category_code": "8042",
+    "industry": "Health & Wellness",
+    "partner": "CareCredit",
+    "onboarding_date": "2024-07-01T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-b9aa3608bd",
+    "merchant_name": "Paws & Claws Vet",
+    "merchant_category_code": "0742",
+    "industry": "Health & Wellness",
+    "partner": "CareCredit",
+    "onboarding_date": "2024-04-26T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-97ccbc76a4",
+    "merchant_name": "Lakeside Dental Group",
+    "merchant_category_code": "8021",
+    "industry": "Health & Wellness",
+    "partner": "CareCredit",
+    "onboarding_date": "2024-11-12T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-bc66b66282",
+    "merchant_name": "Best Buy Electronics",
+    "merchant_category_code": "5732",
+    "industry": "Electronics",
+    "partner": "BestBuy",
+    "onboarding_date": "2026-02-24T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-360862d2fe",
+    "merchant_name": "MicroCenter Tech",
+    "merchant_category_code": "5732",
+    "industry": "Electronics",
+    "partner": "MicroCenter",
+    "onboarding_date": "2024-09-27T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-83d13d403d",
+    "merchant_name": "Verizon Store",
+    "merchant_category_code": "5732",
+    "industry": "Electronics",
+    "partner": "Verizon",
+    "onboarding_date": "2025-03-18T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-c23222ddc0",
+    "merchant_name": "PayPal Digital Goods",
+    "merchant_category_code": "5815",
+    "industry": "Digital",
+    "partner": "PayPal",
+    "onboarding_date": "2026-04-22T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-5ca55ce379",
+    "merchant_name": "AppStore Media",
+    "merchant_category_code": "5816",
+    "industry": "Digital",
+    "partner": "Digital",
+    "onboarding_date": "2026-04-24T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-3f3d3d4898",
+    "merchant_name": "SkyHigh Airlines",
+    "merchant_category_code": "4511",
+    "industry": "Travel",
+    "partner": "SkyHigh",
+    "onboarding_date": "2026-02-18T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-6ae4e6bee7",
+    "merchant_name": "Comfort Inn Downtown",
+    "merchant_category_code": "7011",
+    "industry": "Travel",
+    "partner": "ComfortInn",
+    "onboarding_date": "2025-10-13T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-d12c751aab",
+    "merchant_name": "Dick's Sporting Goods",
+    "merchant_category_code": "5941",
+    "industry": "Lifestyle",
+    "partner": "Dicks",
+    "onboarding_date": "2025-09-28T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-47dd9833a9",
+    "merchant_name": "GiftCard Mall",
+    "merchant_category_code": "5947",
+    "industry": "Lifestyle",
+    "partner": "GiftMall",
+    "onboarding_date": "2024-12-23T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-c964e9c774",
+    "merchant_name": "QuickMart Convenience",
+    "merchant_category_code": "5411",
+    "industry": "Retail & Apparel",
+    "partner": "QuickMart",
+    "onboarding_date": "2024-09-15T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-64404857bd",
+    "merchant_name": "MoneyGram Center",
+    "merchant_category_code": "4829",
+    "industry": "Financial",
+    "partner": "MoneyGram",
+    "onboarding_date": "2026-04-27T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-74ae63c96d",
+    "merchant_name": "CryptoATM Kiosk",
+    "merchant_category_code": "6051",
+    "industry": "Financial",
+    "partner": "CryptoATM",
+    "onboarding_date": "2024-10-27T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-12ecbefe51",
+    "merchant_name": "Amazon Marketplace",
+    "merchant_category_code": "5942",
+    "industry": "Digital",
+    "partner": "Amazon",
+    "onboarding_date": "2025-11-02T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-08384b36ea",
+    "merchant_name": "DealBazaar Online",
+    "merchant_category_code": "5999",
+    "industry": "Retail & Apparel",
+    "partner": "DealBazaar",
+    "onboarding_date": "2024-05-21T18:00:00+00:00"
+  },
+  {
+    "merchant_id": "MER-f85e653fd5",
+    "merchant_name": "Wellness Clinic LLC",
+    "merchant_category_code": "8011",
+    "industry": "Health & Wellness",
+    "partner": "CareCredit",
+    "onboarding_date": "2024-07-28T18:00:00+00:00"
+  }
+]

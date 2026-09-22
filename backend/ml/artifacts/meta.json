@@ -1,0 +1,37 @@
+{
+  "feature_order": [
+    "amount",
+    "hour",
+    "gift_card_amount",
+    "card_present",
+    "promo_financing",
+    "is_small_amount",
+    "is_high_amount",
+    "cvv_no_match",
+    "avs_no_match",
+    "status_declined",
+    "chan_in_store",
+    "chan_e_commerce",
+    "chan_mobile",
+    "entry_chip",
+    "entry_contactless",
+    "entry_swipe",
+    "entry_manual",
+    "entry_cnp",
+    "entry_token",
+    "mcc_cashlike",
+    "mcc_giftcard",
+    "mcc_health",
+    "mcc_electronics",
+    "acct_txn_count",
+    "acct_avg_amount",
+    "amount_zscore"
+  ],
+  "n_train": 52260,
+  "n_fraud": 250,
+  "models": [
+    "RandomForestClassifier",
+    "IsolationForest"
+  ],
+  "version": "0.1.0"
+}

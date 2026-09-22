@@ -1,0 +1,32 @@
+{
+  "accounts": 1000,
+  "days": 40,
+  "date_range": [
+    "2026-08-14",
+    "2026-09-22"
+  ],
+  "total_transactions": 52260,
+  "fraud_transactions": 250,
+  "fraud_rate_pct": 0.48,
+  "fraud_by_vector": {
+    "APP-2": 25,
+    "CB-1": 4,
+    "CB-2": 77,
+    "CB-3": 4,
+    "CB-4": 26,
+    "CC-1": 22,
+    "DW-1": 6,
+    "EC-1": 10,
+    "PF-1": 40,
+    "PL-2": 24,
+    "X-1": 12
+  },
+  "fraud_by_actor": {
+    "3P": 109,
+    "B": 64,
+    "M": 48,
+    "S": 29
+  },
+  "txns_per_day_min": 1196,
+  "txns_per_day_max": 1386
+}
