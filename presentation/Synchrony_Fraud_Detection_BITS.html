@@ -15,45 +15,34 @@
        -webkit-print-color-adjust:exact; print-color-adjust:exact}
   code,.mono{font-family:"SF Mono","Consolas","Menlo",monospace}
 
-  .slide{
-    position:relative; width:1280px; height:720px; background:var(--bg);
+  .slide{position:relative; width:1280px; height:720px; background:var(--bg);
     overflow:hidden; margin:22px auto; box-shadow:0 6px 26px rgba(0,0,0,.28);
-    padding:70px 64px 60px 64px;
-  }
-  /* ---- BITS template header ---- */
+    padding:70px 64px 58px 64px;}
+
+  /* BITS template header */
   .gearmark{position:absolute; top:20px; right:56px; display:flex; width:200px; height:56px;
     border-radius:4px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.15)}
   .gearmark div{flex:1; display:flex; align-items:flex-end; justify-content:center;
-    padding-bottom:5px; font-size:11px; font-style:italic; color:#fff; font-weight:700;
-    letter-spacing:.2px; position:relative}
+    padding-bottom:5px; font-size:11px; font-style:italic; color:#fff; font-weight:700; position:relative}
   .gearmark .c1{background:var(--y)} .gearmark .c2{background:var(--b)} .gearmark .c3{background:var(--r)}
   .gearmark::after{content:""; position:absolute; top:9px; left:14px; right:14px; height:16px;
     border-top:3px solid rgba(255,255,255,.55); border-radius:60% 60% 0 0/100% 100% 0 0}
-  .hrule{position:absolute; top:92px; left:64px; right:56px; height:5px; display:flex; gap:0}
-  .hrule .s1{flex:0 0 34%; background:var(--y)} .hrule .s2{flex:0 0 30%; background:var(--b)}
-  .hrule .s3{flex:0 0 20%; background:var(--r)} .hrule .s0{flex:1; background:transparent}
+  .hrule{position:absolute; top:92px; left:64px; right:56px; height:5px; display:flex}
+  .hrule .s1{flex:0 0 40%; background:var(--y)} .hrule .s2{flex:0 0 34%; background:var(--b)}
+  .hrule .s3{flex:0 0 26%; background:var(--r)}
 
-  /* ---- footer ---- */
-  .footer{position:absolute; bottom:22px; left:64px; right:56px; display:flex;
-    align-items:center; justify-content:space-between}
-  .footer .bar{display:flex; width:340px; height:6px; margin-left:26%}
-  .footer .bar .s1{flex:0 0 40%; background:var(--y)} .footer .bar .s2{flex:0 0 32%; background:var(--b)}
-  .footer .bar .s3{flex:0 0 28%; background:var(--r)}
+  .footer{position:absolute; bottom:22px; left:64px; right:56px; display:flex; align-items:center; justify-content:space-between}
+  .footer .bar{display:flex; width:300px; height:6px}
+  .footer .bar .s1{flex:0 0 40%; background:var(--y)} .footer .bar .s2{flex:0 0 34%; background:var(--b)} .footer .bar .s3{flex:0 0 26%; background:var(--r)}
   .footer .bits{font-size:15px; color:var(--navy)} .footer .bits b{font-weight:800}
-
-  /* synchrony wordmark */
-  .syn{display:inline-flex; align-items:center; gap:8px}
-  .syn .bars{display:inline-flex; align-items:flex-end; gap:2px; height:20px}
-  .syn .bars i{width:4px; background:var(--y); border-radius:1px; display:block}
-  .syn .bars i:nth-child(1){height:9px} .syn .bars i:nth-child(2){height:14px} .syn .bars i:nth-child(3){height:20px}
-  .syn span{font-size:18px; font-weight:800; color:var(--navy); letter-spacing:-.3px}
+  .footmark{height:16px}
 
   h1.title{font-size:23px; color:var(--navy); font-weight:800; margin-bottom:2px; letter-spacing:-.2px}
   .kicker{font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--r); font-weight:700; margin-bottom:6px}
-  .content{margin-top:14px}
   p.lead{font-size:14px; color:var(--slate); line-height:1.5}
+  .content{margin-top:14px}
+  .muted{color:var(--slate)}
 
-  /* tag chips */
   .tag{display:inline-block; font-size:10px; font-weight:800; padding:2px 7px; border-radius:20px;
     letter-spacing:.4px; text-transform:uppercase; vertical-align:middle}
   .tag.impl{background:#e5f6ec; color:var(--green); border:1px solid #b6e3c8}
@@ -62,38 +51,36 @@
 
   .grid{display:grid; gap:14px}
   .card{background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:14px 16px}
-  .card h3{font-size:14px; color:var(--navy); margin-bottom:6px; display:flex; align-items:center; gap:8px}
+  .card h3{font-size:14px; color:var(--navy); margin-bottom:6px; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
   .card p, .card li{font-size:12px; color:var(--slate); line-height:1.5}
   .card ul{margin-left:15px}
-  .muted{color:var(--slate)}
 
-  /* pipeline nodes */
-  .flowcol{display:flex; flex-direction:column; gap:8px}
   .node{border:1.5px solid var(--navy); border-radius:9px; padding:8px 12px; background:#fff;
-    font-size:12px; color:var(--navy); font-weight:700; text-align:center; position:relative}
+    font-size:12px; color:var(--navy); font-weight:700; text-align:center}
   .node small{display:block; font-weight:400; color:var(--slate); font-size:10.5px; margin-top:2px}
   .node.y{border-color:var(--y); background:#fff9ec} .node.b{border-color:var(--b); background:#eef9fe}
   .node.r{border-color:var(--r); background:#fdeeee} .node.navy{background:var(--navy); color:#fff}
   .node.navy small{color:#c9d2e6}
-  .arrow{color:var(--slate); font-size:18px; text-align:center; line-height:1}
-  .harrow{display:flex; align-items:center; color:#9aa3b2; font-size:20px; padding:0 2px}
+  .arrow{color:#9aa3b2; font-size:16px; text-align:center; line-height:1.1}
+  .harrow{display:flex; align-items:center; color:#9aa3b2; font-size:18px; padding:0 4px}
+  .flowcol{display:flex; flex-direction:column; gap:7px}
 
-  table{border-collapse:collapse; width:100%; font-size:11.5px}
+  table{border-collapse:collapse; width:100%; font-size:11.5px; table-layout:fixed}
   th{background:var(--navy); color:#fff; text-align:left; padding:7px 9px; font-weight:700}
-  td{border-bottom:1px solid var(--line); padding:6px 9px; color:var(--ink); vertical-align:top}
+  td{border-bottom:1px solid var(--line); padding:6px 9px; color:var(--ink); vertical-align:top; word-wrap:break-word}
   tr:nth-child(even) td{background:var(--soft)}
-  .pill{display:inline-block; background:var(--navy); color:var(--y); font-weight:700; font-size:10px;
-    padding:1px 6px; border-radius:4px; font-family:monospace}
+  .pill{display:inline-block; background:var(--navy); color:var(--y); font-weight:700; font-size:10px; padding:1px 6px; border-radius:4px; font-family:monospace}
 
-  pre.code{background:#0f1830; color:#d7e2f5; border-radius:10px; padding:12px 14px; font-size:11px;
-    line-height:1.5; overflow:hidden; border:1px solid #223056}
-  pre.code .k{color:#7fb0ff} pre.code .s{color:#8fe3b0} pre.code .c{color:#6b7794} pre.code .n{color:#f3c37b}
+  pre.code{background:#0f1830; color:#d7e2f5; border-radius:9px; padding:10px 12px; font-size:10.5px;
+    line-height:1.5; overflow:hidden; border:1px solid #223056; white-space:pre-wrap}
+  pre.code .k{color:#7fb0ff} pre.code .s{color:#8fe3b0} pre.code .c{color:#6b7794} pre.code .n{color:#f3c37b} pre.code .d{color:#e58fb0}
+  .fname{font-family:monospace; font-size:10px; color:var(--slate); margin-bottom:4px; display:block}
 
-  .legend{position:absolute; top:60px; right:56px; font-size:10px; color:var(--slate)}
+  .legend{position:absolute; top:60px; right:56px; font-size:10px}
   .stat{background:var(--navy); color:#fff; border-radius:12px; padding:14px 16px}
   .stat b{font-size:30px; display:block; color:var(--y); line-height:1}
   .stat span{font-size:11px; color:#c9d2e6}
-  .flex{display:flex} .between{justify-content:space-between} .aic{align-items:center}
+  .syn{display:inline-flex; align-items:center; gap:8px}
 
   @page{ size:13.333in 7.5in; margin:0 }
   @media print{
@@ -105,12 +92,13 @@
 </head>
 <body>
 
-<!-- ============ SLIDE 1 — TITLE ============ -->
+<!-- reusable header/footer are repeated per slide -->
+
+<!-- 1 TITLE -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
-
-  <div style="position:absolute; top:210px; left:64px; right:64px">
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+  <div style="position:absolute; top:200px; left:64px; right:64px">
     <div style="display:flex; align-items:center; gap:14px; margin-bottom:26px">
       <img src="synchrony-logo.png" style="height:34px" alt="Synchrony"/>
       <span style="font-size:12px;color:var(--slate);font-weight:600;border-left:1px solid var(--line);padding-left:12px">HACKATHON · PS-2</span></div>
@@ -121,8 +109,7 @@
     <p style="font-size:13px; color:var(--slate); margin-top:8px; max-width:820px; line-height:1.5">
       A transaction-type-aware pipeline that classifies each event, activates only the relevant fraud
       signals, blends deterministic ML with vector similarity, and returns an explainable real-time decision.</p>
-
-    <div style="display:flex; gap:40px; margin-top:38px; font-size:13px; color:var(--ink)">
+    <div style="display:flex; gap:40px; margin-top:34px; font-size:13px; color:var(--ink)">
       <div><div style="color:var(--slate);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Team</div>
         <b>Abhinav Pal</b><br><span class="muted">2022B2A11556G · BITS Pilani, Pilani Campus</span></div>
       <div><div style="color:var(--slate);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Hackathon</div>
@@ -130,212 +117,202 @@
       <div><div style="color:var(--slate);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px">Date</div>
         September 2026</div>
     </div>
-    <div style="margin-top:26px; font-size:12.5px; color:var(--navy)">
+    <div style="margin-top:24px; font-size:12.5px; color:var(--navy)">
       <span style="color:var(--slate)">Source code:</span>
-      <b>github.com/abhinav-pal246/Synchrony_Real_Fraud_Detection_and_Prevention_In_digital_Landing</b>
-    </div>
+      <b>github.com/abhinav-pal246/Synchrony_Real_Fraud_Detection_and_Prevention_In_digital_Landing</b></div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 2 — PROBLEM ============ -->
+<!-- 2 PROBLEM -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">The Problem</div>
   <h1 class="title">Static rules cannot keep pace with evolving fraud</h1>
-
-  <div class="content grid" style="grid-template-columns:1fr 1fr; gap:14px">
+  <div class="content grid" style="grid-template-columns:1fr 1fr">
     <div class="card"><h3>Why traditional detection breaks down</h3>
       <ul>
         <li>Digital lending drives <b>high-volume, low-latency</b> transaction streams.</li>
         <li>Fraud patterns evolve continuously — rules lag behind <b>novel</b> attacks.</li>
-        <li>Applying <b>one model / one feature-set to every transaction</b> is inefficient and blind to context.</li>
+        <li>Applying <b>one model / one feature-set to every transaction</b> is inefficient and context-blind.</li>
         <li>Aggressive rules raise <b>false positives</b> that block genuine customers.</li>
         <li>Analysts get a "fraud" flag with <b>no reason</b> — no basis for a fast, defensible decision.</li>
-      </ul>
-    </div>
+      </ul></div>
     <div class="card" style="background:#fff; border-color:var(--r)">
       <h3 style="color:var(--r)">The core challenge</h3>
       <p style="font-size:14px; color:var(--navy); line-height:1.55; font-weight:600">
-        “How can we dynamically analyze <u>every</u> transaction, identify the <u>appropriate</u> fraud signals,
-        detect <u>known and unknown</u> patterns, and make an <u>explainable</u> real-time decision?”</p>
+        "How can we dynamically analyze <u>every</u> transaction, identify the <u>appropriate</u> fraud signals,
+        detect <u>known and unknown</u> patterns, and make an <u>explainable</u> real-time decision?"</p>
       <p style="margin-top:12px">Our answer: make the pipeline <b>transaction-type-aware</b> and <b>evidence-first</b> —
-        the system explains what it saw, not just what it concluded.</p>
-    </div>
+        the system explains what it saw, not just what it concluded.</p></div>
   </div>
-
-  <div style="margin-top:22px">
-    <div class="flex aic" style="gap:0; justify-content:center">
-      <div class="node y">Transaction<small>event arrives</small></div><div class="harrow">→</div>
-      <div class="node b">Fraud Analysis<small>type-aware signals</small></div><div class="harrow">→</div>
-      <div class="node b">Risk Assessment<small>ML + vector + rules</small></div><div class="harrow">→</div>
-      <div class="node navy">Decision<small>approve / review / block</small></div><div class="harrow">→</div>
-      <div class="node r">Action<small>alert + dashboard</small></div>
-    </div>
+  <div style="margin-top:24px; display:flex; align-items:stretch; justify-content:center; gap:0">
+    <div class="node y" style="width:170px">Transaction<small>event arrives</small></div><div class="harrow">→</div>
+    <div class="node b" style="width:170px">Fraud Analysis<small>type-aware signals</small></div><div class="harrow">→</div>
+    <div class="node b" style="width:170px">Risk Assessment<small>ML + vector + rules</small></div><div class="harrow">→</div>
+    <div class="node navy" style="width:170px">Decision<small>approve / review / block</small></div><div class="harrow">→</div>
+    <div class="node r" style="width:150px">Action<small>alert + dashboard</small></div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 3 — PROPOSED SOLUTION ============ -->
+<!-- 3 PROPOSED SOLUTION (matches the architecture diagram order) -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Proposed Solution</div>
-  <h1 class="title">A layered, real-time fraud-detection platform</h1>
+  <h1 class="title">A layered, transaction-type-aware fraud pipeline</h1>
   <div class="legend"><span class="tag impl">Implemented</span> <span class="tag proto">Prototype</span> <span class="tag prop">Proposed</span></div>
 
-  <div class="content flex" style="gap:26px; margin-top:18px">
-    <div class="flowcol" style="width:300px">
-      <div class="node y">Transaction Service <span class="tag proto">proto</span><small>Synchrony Credit-Auth schema</small></div>
+  <div class="content" style="display:flex; gap:26px; margin-top:16px">
+    <div class="flowcol" style="width:330px">
+      <div class="node y">Transaction Service <span class="tag proto">proto</span><small>Synchrony Credit-Auth event</small></div>
       <div class="arrow">↓</div>
-      <div class="node b">Kafka Event Streaming <span class="tag impl">impl</span><small>decouple + replay</small></div>
+      <div class="node b">Kafka <span class="tag impl">impl</span><small>topics: type-of-payment · fraud-alerts</small></div>
       <div class="arrow">↓</div>
-      <div class="node navy">Fraud Detection Service <span class="tag impl">impl</span></div>
+      <div class="node">Classify transaction type<small>1 of 8 product lines</small></div>
+      <div class="arrow">↓ &nbsp; Fraud Detection Service</div>
+      <div class="node">1 · Understand the transaction</div>
       <div class="arrow">↓</div>
-      <div class="node">1 · Transaction Understanding<small>classify 1 of 8 product lines</small></div>
+      <div class="node">2 · Feature engineering <small>&harr; Redis velocity</small></div>
       <div class="arrow">↓</div>
-      <div class="node">2 · Dynamic Feature Engineering<small>only relevant signals</small></div>
-      <div class="arrow">↓</div>
-      <div class="node">3 · ML / Anomaly Detection<small>RandomForest + IsolationForest</small></div>
+      <div class="node">3 · ML model <small>&harr; PostgreSQL + Redis context</small></div>
     </div>
-
-    <div class="flowcol" style="width:300px; margin-top:96px">
-      <div class="node">4 · Embeddings + Vector Similarity<small>pgvector kNN precedent</small></div>
+    <div class="flowcol" style="width:330px; padding-top:150px">
+      <div class="node b">4 · Embeddings + pgvector<small>"have we seen something similar?"</small></div>
       <div class="arrow">↓</div>
-      <div class="node r">5 · LLM / Explainability<small>AWS Bedrock · evidence → reason</small></div>
+      <div class="node r">5 · AWS Bedrock + Meta Llama<small>explain the situation</small></div>
       <div class="arrow">↓</div>
-      <div class="node navy">6 · Decision Engine<small>fuse scores + consensus</small></div>
+      <div class="node navy">6 · Decision Engine<small>fuse score + rules + similarity</small></div>
       <div class="arrow">↓</div>
       <div class="node y">Approve · Review · Step-up · Block</div>
       <div class="arrow">↓</div>
-      <div class="node b">Alert Service + Analyst Dashboard <span class="tag impl">impl</span><small>React investigation workspace</small></div>
+      <div class="node r">Alert Service → React Dashboard <span class="tag impl">impl</span></div>
     </div>
-
-    <div class="card" style="flex:1; align-self:flex-start; margin-top:96px">
-      <h3>Design principle</h3>
-      <p>The platform <b>does not blindly apply one model to every transaction.</b> Each event is first
-        <b>classified</b>, which activates only the fraud vectors that can actually occur for that product line.</p>
-      <p style="margin-top:10px">Deterministic models own the <b>risk score</b>; the LLM only <b>explains</b>.
-        The Decision Engine — not the LLM — makes the call.</p>
-      <p style="margin-top:10px" class="muted">Every layer exists to answer a specific question:
-        <i>what is this?, is it anomalous?, have we seen it before?, why?, and what do we do?</i></p>
+    <div class="card" style="flex:1; align-self:flex-start">
+      <h3>Why this order</h3>
+      <p><b>Classify first</b>, so only the fraud vectors that can occur for that product line are evaluated —
+        the system never blindly applies one model to every transaction.</p>
+      <p style="margin-top:10px"><b>Context before scoring:</b> PostgreSQL supplies the customer's 39-day history and
+        Redis the hot velocity, so anomalies are judged relative to the customer.</p>
+      <p style="margin-top:10px"><b>Models decide, the LLM explains.</b> Deterministic ML + rules + vector precedent own
+        the risk; Bedrock only produces the reason. The Decision Engine makes the call.</p>
+      <p style="margin-top:10px" class="muted">A "collection of agents" (rule · ML · velocity · graph · vector) runs inside
+        the detection service and feeds the Decision Engine.</p>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 4 — ARCHITECTURE ============ -->
+<!-- 4 ARCHITECTURE (faithful to the project's Excalidraw) -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Architecture</div>
   <h1 class="title">End-to-end system architecture</h1>
 
-  <svg viewBox="0 0 1160 500" width="1160" height="470" style="margin-top:8px">
+  <svg viewBox="0 0 1160 470" width="1152" height="482" style="margin-top:6px">
     <defs>
-      <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
-        <path d="M0,0 L7,3 L0,6 Z" fill="#5b6472"/></marker>
+      <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5b6472"/></marker>
       <style>
-        .b{fill:#fff;stroke:#1F2A44;stroke-width:1.5;rx:8} .lbl{font:700 12px Arial;fill:#1F2A44}
-        .sub{font:10px Arial;fill:#5b6472} .ln{stroke:#8f98a8;stroke-width:1.4;fill:none;marker-end:url(#ah)}
-        .el{font:italic 9px Arial;fill:#7a8494} .sg{fill:#f6f8fb;stroke:#cdd5e0;stroke-dasharray:4 3;stroke-width:1.2}
+        .bx{fill:#fff;stroke:#1F2A44;stroke-width:1.5} .lbl{font:700 12px Arial;fill:#1F2A44}
+        .sub{font:10px Arial;fill:#5b6472} .ln{stroke:#8f98a8;stroke-width:1.5;fill:none;marker-end:url(#ah)}
+        .el{font:italic 9px Arial;fill:#7a8494} .sg{fill:#fbfcfe;stroke:#cdd5e0;stroke-dasharray:4 3;stroke-width:1.2}
       </style>
     </defs>
 
-    <!-- customer / txn svc -->
-    <rect class="b" x="0" y="200" width="96" height="46" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/>
-    <text class="lbl" x="48" y="220" text-anchor="middle">Customer</text><text class="sub" x="48" y="234" text-anchor="middle">initiates txn</text>
-    <rect class="b" x="120" y="196" width="110" height="54" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/>
-    <text class="lbl" x="175" y="216" text-anchor="middle">Transaction</text><text class="lbl" x="175" y="230" text-anchor="middle">Service</text>
-    <text class="sub" x="175" y="243" text-anchor="middle">Credit-Auth JSON</text>
+    <!-- ingestion -->
+    <rect class="bx" x="0" y="196" width="78" height="42" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/>
+    <text class="lbl" x="39" y="213" text-anchor="middle">Customer</text><text class="sub" x="39" y="227" text-anchor="middle">initiates</text>
+    <rect class="bx" x="96" y="192" width="98" height="50" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/>
+    <text class="lbl" x="145" y="212" text-anchor="middle">Transaction</text><text class="lbl" x="145" y="226" text-anchor="middle">Service</text>
 
     <!-- kafka -->
-    <rect class="sg" x="256" y="150" width="130" height="150" rx="8"/>
-    <text class="lbl" x="321" y="168" text-anchor="middle">Apache Kafka</text>
-    <rect class="b" x="270" y="182" width="102" height="34" style="fill:#eef9fe;stroke:#35B6E5"/><text class="sub" x="321" y="203" text-anchor="middle">transaction-events</text>
-    <rect class="b" x="270" y="224" width="102" height="34" style="fill:#eef9fe;stroke:#35B6E5"/><text class="sub" x="321" y="245" text-anchor="middle">fraud-decisions</text>
-    <rect class="b" x="270" y="266" width="102" height="30" style="fill:#fdeeee;stroke:#ED1C24"/><text class="sub" x="321" y="285" text-anchor="middle">fraud-alerts</text>
+    <rect class="sg" x="212" y="150" width="116" height="140" rx="8"/>
+    <text class="lbl" x="270" y="167" text-anchor="middle">Kafka</text>
+    <rect class="bx" x="224" y="176" width="92" height="34" rx="6" style="fill:#eef9fe;stroke:#35B6E5"/><text class="sub" x="270" y="197" text-anchor="middle">type-of-payment</text>
+    <rect class="bx" x="224" y="240" width="92" height="32" rx="6" style="fill:#fdeeee;stroke:#ED1C24"/><text class="sub" x="270" y="260" text-anchor="middle">fraud-alerts</text>
 
-    <!-- FDS box -->
-    <rect class="sg" x="416" y="20" width="470" height="400" rx="10" style="fill:#fbfcfe"/>
-    <text class="lbl" x="651" y="40" text-anchor="middle" style="font-size:13px">Fraud Detection Service (FastAPI)</text>
+    <!-- classify 8 types -->
+    <rect class="bx" x="344" y="150" width="128" height="140" rx="8"/>
+    <text class="lbl" x="408" y="168" text-anchor="middle">Classify type</text>
+    <text class="sub" x="352" y="184">1 Private-label</text><text class="sub" x="352" y="197">2 Co-branded</text>
+    <text class="sub" x="352" y="210">3 Promo financing</text><text class="sub" x="352" y="223">4 POS installment</text>
+    <text class="sub" x="352" y="236">5 CareCredit</text><text class="sub" x="352" y="249">6 Credit application</text>
+    <text class="sub" x="352" y="262">7 Digital wallet</text><text class="sub" x="352" y="275">8 E-commerce</text>
+
+    <!-- FDS -->
+    <rect class="sg" x="488" y="24" width="366" height="418" rx="10"/>
+    <text class="lbl" x="671" y="42" text-anchor="middle" style="font-size:13px">Fraud Detection Service</text>
+    <rect x="590" y="0" width="162" height="20" rx="4" fill="#fdf0dc" stroke="#f2d69b"/><text class="sub" x="671" y="14" text-anchor="middle">collection of agents</text>
+    <path class="ln" d="M671,22 L671,32"/>
     <g>
-      <rect class="b" x="440" y="56" width="200" height="40" style="fill:#fff"/><text class="lbl" x="540" y="72" text-anchor="middle">1 · Transaction Understanding</text><text class="sub" x="540" y="86" text-anchor="middle">classify 1 of 8 product lines</text>
-      <rect class="b" x="440" y="108" width="200" height="40"/><text class="lbl" x="540" y="124" text-anchor="middle">2 · Feature Engineering</text><text class="sub" x="540" y="138" text-anchor="middle">26 shared train/serve features</text>
-      <rect class="b" x="440" y="160" width="200" height="40"/><text class="lbl" x="540" y="176" text-anchor="middle">3 · ML Model</text><text class="sub" x="540" y="190" text-anchor="middle">RandomForest + IsolationForest</text>
-      <rect class="b" x="440" y="212" width="200" height="40"/><text class="lbl" x="540" y="228" text-anchor="middle">4 · Embeddings</text><text class="sub" x="540" y="242" text-anchor="middle">26-dim behavioral vector</text>
-      <rect class="b" x="662" y="108" width="200" height="40" style="fill:#eef9fe;stroke:#35B6E5"/><text class="lbl" x="762" y="124" text-anchor="middle">5 · Vector Similarity</text><text class="sub" x="762" y="138" text-anchor="middle">pgvector kNN precedent</text>
-      <rect class="b" x="662" y="160" width="200" height="40" style="fill:#fdeeee;stroke:#ED1C24"/><text class="lbl" x="762" y="176" text-anchor="middle">6 · AWS Bedrock / LLM</text><text class="sub" x="762" y="190" text-anchor="middle">explanation · guardrails</text>
-      <rect class="b" x="662" y="212" width="200" height="40" style="fill:#1F2A44;stroke:#1F2A44"/><text class="lbl" x="762" y="228" text-anchor="middle" style="fill:#fff">7 · Decision Engine</text><text class="sub" x="762" y="242" text-anchor="middle" style="fill:#c9d2e6">fuse · consensus · thresholds</text>
-      <rect class="b" x="551" y="300" width="200" height="40" style="fill:#f6f8fb"/><text class="lbl" x="651" y="316" text-anchor="middle">5 Detector Agents</text><text class="sub" x="651" y="330" text-anchor="middle">rule · ML · velocity · graph · vector</text>
+      <rect class="bx" x="508" y="56" width="216" height="36" rx="7"/><text class="lbl" x="616" y="78" text-anchor="middle">1 · Understand the transaction</text>
+      <rect class="bx" x="508" y="104" width="216" height="36" rx="7"/><text class="lbl" x="616" y="126" text-anchor="middle">2 · feature engineering</text>
+      <rect class="bx" x="508" y="152" width="216" height="36" rx="7"/><text class="lbl" x="616" y="174" text-anchor="middle">3 · ML model</text>
+      <rect class="bx" x="508" y="200" width="216" height="36" rx="7" style="fill:#eef9fe;stroke:#35B6E5"/><text class="lbl" x="616" y="222" text-anchor="middle">4 · Embeddings + pgvector</text>
+      <rect class="bx" x="508" y="248" width="216" height="40" rx="7" style="fill:#fdeeee;stroke:#ED1C24"/><text class="lbl" x="616" y="266" text-anchor="middle">5 · AWS Bedrock + Meta Llama</text><text class="sub" x="616" y="279" text-anchor="middle">explain the situation</text>
+      <rect class="bx" x="508" y="300" width="216" height="38" rx="7" style="fill:#1F2A44;stroke:#1F2A44"/><text class="lbl" x="616" y="323" text-anchor="middle" style="fill:#fff">6 · Decision Engine</text>
     </g>
+    <text class="el" x="734" y="216">have we seen</text><text class="el" x="734" y="227">something similar?</text>
 
-    <!-- infra right -->
-    <rect class="b" x="920" y="60" width="150" height="42" style="fill:#fff9ec;stroke:#F4A81D"/><text class="lbl" x="995" y="78" text-anchor="middle">Redis</text><text class="sub" x="995" y="92" text-anchor="middle">velocity · hot context</text>
-    <rect class="b" x="920" y="120" width="150" height="52" style="fill:#fff9ec;stroke:#F4A81D"/><text class="lbl" x="995" y="140" text-anchor="middle">PostgreSQL</text><text class="sub" x="995" y="154" text-anchor="middle">39-day history · alerts</text><text class="sub" x="995" y="166" text-anchor="middle">audit · model outputs</text>
-    <rect class="b" x="920" y="190" width="150" height="42" style="fill:#eef9fe;stroke:#35B6E5"/><text class="lbl" x="995" y="208" text-anchor="middle">pgvector store</text><text class="sub" x="995" y="222" text-anchor="middle">2,750 case vectors</text>
-    <rect class="b" x="920" y="250" width="150" height="42" style="fill:#fdeeee;stroke:#ED1C24"/><text class="lbl" x="995" y="268" text-anchor="middle">AWS Bedrock</text><text class="sub" x="995" y="282" text-anchor="middle">Llama-3 8B</text>
+    <!-- stores -->
+    <rect class="bx" x="884" y="104" width="150" height="36" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/><text class="lbl" x="959" y="126" text-anchor="middle">Redis · velocity</text>
+    <rect class="bx" x="884" y="152" width="150" height="40" rx="8"/><text class="lbl" x="959" y="169" text-anchor="middle">Processing</text><text class="sub" x="959" y="183" text-anchor="middle">PostgreSQL + Redis</text>
+    <rect class="bx" x="884" y="210" width="150" height="44" rx="8" style="fill:#fff9ec;stroke:#F4A81D"/><text class="lbl" x="959" y="228" text-anchor="middle">PostgreSQL</text><text class="sub" x="959" y="242" text-anchor="middle">39-day history + pgvector</text>
 
-    <!-- alert + dash -->
-    <rect class="b" x="440" y="360" width="180" height="40" style="fill:#fdeeee;stroke:#ED1C24"/><text class="lbl" x="530" y="376" text-anchor="middle">Alert Service</text><text class="sub" x="530" y="390" text-anchor="middle">high-risk → analyst</text>
-    <rect class="b" x="660" y="360" width="200" height="40" style="fill:#eef9fe;stroke:#35B6E5"/><text class="lbl" x="760" y="376" text-anchor="middle">React Analyst Dashboard</text><text class="sub" x="760" y="390" text-anchor="middle">investigate · lookup · explain</text>
+    <!-- alert path (below kafka) -->
+    <rect class="bx" x="212" y="322" width="150" height="36" rx="8" style="fill:#fdeeee;stroke:#ED1C24"/><text class="lbl" x="287" y="344" text-anchor="middle">Alert Service</text>
+    <rect class="bx" x="212" y="374" width="150" height="40" rx="8" style="fill:#eef9fe;stroke:#35B6E5"/><text class="lbl" x="287" y="391" text-anchor="middle">React Dashboard</text><text class="sub" x="287" y="405" text-anchor="middle">investigate · lookup</text>
 
     <!-- arrows -->
-    <path class="ln" d="M96,223 L118,223"/>
-    <path class="ln" d="M230,223 L268,223"/><text class="el" x="248" y="216">publish</text>
-    <path class="ln" d="M372,199 L438,120"/><text class="el" x="392" y="150">consume</text>
-    <path class="ln" d="M540,96 L540,106"/><path class="ln" d="M540,148 L540,158"/><path class="ln" d="M540,200 L540,210"/>
-    <path class="ln" d="M640,128 L660,128"/><path class="ln" d="M762,148 L762,158"/><path class="ln" d="M762,200 L762,210"/>
-    <path class="ln" d="M651,252 L651,298"/><text class="el" x="655" y="278">scores</text>
-    <path class="ln" d="M640,232 L660,232"/>
-    <path class="ln" d="M862,140 L918,140"/><text class="el" x="874" y="133">SQL</text>
-    <path class="ln" d="M862,180 L918,205"/><text class="el" x="874" y="188">kNN</text>
-    <path class="ln" d="M862,180 L918,271"/>
-    <path class="ln" d="M762,252 L762,300 L651,300"/>
-    <path class="ln" d="M651,340 L530,358"/><path class="ln" d="M651,340 L760,358"/>
-    <path class="ln" d="M620,380 L658,380"/>
-    <path class="ln" d="M530,358 L372,290"/><text class="el" x="430" y="330">alert topic</text>
+    <path class="ln" d="M78,217 L94,217"/>
+    <path class="ln" d="M194,217 L222,195"/><text class="el" x="196" y="200">event</text>
+    <path class="ln" d="M316,193 L342,205"/>
+    <path class="ln" d="M472,210 L506,80"/><text class="el" x="474" y="150">classified</text>
+    <path class="ln" d="M616,92 L616,102"/><path class="ln" d="M616,140 L616,150"/><path class="ln" d="M616,188 L616,198"/><path class="ln" d="M616,236 L616,246"/><path class="ln" d="M616,288 L616,298"/>
+    <path class="ln" d="M724,122 L882,122"/><path class="ln" d="M882,130 L726,130" /><text class="el" x="760" y="118">velocity</text>
+    <path class="ln" d="M724,170 L882,172"/><path class="ln" d="M882,180 L726,180"/><text class="el" x="762" y="166">context</text>
+    <path class="ln" d="M959,210 L959,194"/>
+    <path class="ln" d="M508,319 L360,270"/><text class="el" x="392" y="300">fraud-alerts</text>
+    <path class="ln" d="M270,272 L270,320"/>
+    <path class="ln" d="M287,358 L287,372"/>
   </svg>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 5 — REAL-TIME DATA FLOW ============ -->
+<!-- 5 REAL-TIME DATA FLOW -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Real-Time Data Flow</div>
   <h1 class="title">What happens when a transaction arrives</h1>
-
-  <div class="content flex" style="gap:20px">
+  <div class="content" style="display:flex; gap:20px">
     <div style="flex:1.15">
       <table>
-        <tr><th style="width:34px">#</th><th>Step</th><th>Detail</th></tr>
-        <tr><td>1–3</td><td>Ingest &amp; publish</td><td>Transaction Service emits the Credit-Auth event → Kafka <span class="pill">transaction-events</span></td></tr>
-        <tr><td>4</td><td>Consume</td><td>Fraud Detection Service consumes the event</td></tr>
-        <tr><td>5</td><td>Classify</td><td>Identify the product line / transaction type (1 of 8)</td></tr>
-        <tr><td>6</td><td>Retrieve context</td><td>Pull the account's <b>39-day history</b> from PostgreSQL + hot velocity from Redis</td></tr>
-        <tr><td>7</td><td>Feature engineering</td><td>Build the 26-feature vector (amount, z-score, channel, CVV/AVS, MCC…)</td></tr>
-        <tr><td>8</td><td>ML scoring</td><td>RandomForest probability + IsolationForest anomaly</td></tr>
-        <tr><td>9–10</td><td>Vector search</td><td>Embed → pgvector kNN over 2,750 labelled cases → nearest precedents</td></tr>
-        <tr><td>11</td><td>Explain</td><td>LLM receives <b>structured evidence</b> → human-readable reason</td></tr>
-        <tr><td>12–13</td><td>Decide</td><td>Decision Engine fuses score + rules + similarity → <b>APPROVE / REVIEW / BLOCK</b></td></tr>
-        <tr><td>14–15</td><td>Act</td><td>Alert Service notifies analyst; dashboard shows txn + explanation</td></tr>
+        <colgroup><col style="width:44px"><col style="width:150px"><col></colgroup>
+        <tr><th>#</th><th>Step</th><th>Detail</th></tr>
+        <tr><td>1–2</td><td>Ingest</td><td>Transaction Service emits the Synchrony Credit-Auth event</td></tr>
+        <tr><td>3</td><td>Publish</td><td>Event → Kafka <span class="pill">type-of-payment</span></td></tr>
+        <tr><td>4</td><td>Classify type</td><td>Identify the product line (1 of 8)</td></tr>
+        <tr><td>5</td><td>Understand + retrieve</td><td>Pull the account's <b>39-day history</b> (PostgreSQL) + hot velocity (Redis)</td></tr>
+        <tr><td>6</td><td>Feature engineering</td><td>Build the 26-feature vector (amount, z-score, channel, CVV/AVS, MCC…)</td></tr>
+        <tr><td>7</td><td>ML model</td><td>RandomForest probability + IsolationForest anomaly</td></tr>
+        <tr><td>8</td><td>Embeddings + pgvector</td><td>Embed → kNN over 2,750 labelled cases → nearest precedents</td></tr>
+        <tr><td>9</td><td>Bedrock + Meta Llama</td><td>Structured evidence → human-readable reason</td></tr>
+        <tr><td>10</td><td>Decision Engine</td><td>Fuse score + rules + similarity → <b>APPROVE / REVIEW / BLOCK</b></td></tr>
+        <tr><td>11–12</td><td>Act</td><td>Kafka <span class="pill">fraud-alerts</span> → Alert Service → React dashboard</td></tr>
       </table>
     </div>
-
     <div style="flex:.85">
       <div class="card" style="background:#0f1830; border-color:#223056">
         <h3 style="color:#fff">Example event travelling the pipeline</h3>
@@ -347,86 +324,69 @@
   <span class="n">"cvv_result"</span>: <span class="s">"no_match"</span>,
   <span class="n">"avs_result"</span>: <span class="s">"N"</span>,
   <span class="n">"status"</span>: <span class="s">"declined"</span>
-}</pre>
-      </div>
+}</pre></div>
       <div class="card" style="margin-top:12px">
         <h3>Pipeline verdict <span class="tag impl">live output</span></h3>
         <p><b>Type:</b> Co-branded e-commerce · <b>Vector:</b> <span class="pill">CB-2</span> card-testing</p>
         <p style="margin-top:4px"><b>Signals:</b> cvv_mismatch · avs_mismatch · small_amount_decline</p>
         <p style="margin-top:4px"><b>Nearest cases:</b> 5 / 8 labelled fraud (CB-2)</p>
-        <p style="margin-top:4px"><b>Decision:</b> <span style="color:var(--r);font-weight:800">BLOCK / step-up</span> · risk 1.00</p>
-      </div>
+        <p style="margin-top:4px"><b>Decision:</b> <span style="color:var(--r);font-weight:800">BLOCK / step-up</span> · risk 1.00</p></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 6 — WHY KAFKA ============ -->
+<!-- 6 WHY KAFKA -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Streaming Backbone</div>
   <h1 class="title">Why Kafka? — decoupling and replay</h1>
-
-  <div class="content flex" style="gap:24px; margin-top:20px">
-    <div style="width:290px">
-      <div class="flowcol">
-        <div class="node y">Transaction Service<small>producer</small></div><div class="arrow">↓</div>
-        <div class="node b">Kafka Topic<small>partitioned log</small></div><div class="arrow">↓</div>
-        <div class="node navy">Fraud Detection Consumers<small>scale horizontally</small></div><div class="arrow">↓</div>
-        <div class="node">Processing Pipeline<small>classify → score → decide</small></div>
-      </div>
-    </div>
-    <div style="flex:1" class="grid" >
-      <div class="card"><h3>What Kafka buys us</h3>
-        <ul>
-          <li><b>Decouples</b> transaction processing from fraud detection.</li>
-          <li>High-throughput, <b>asynchronous</b> event streaming.</li>
-          <li>Multiple independent <b>consumers</b> (scoring, audit, analytics).</li>
-          <li><b>Replay</b> — re-run history against a new model version.</li>
-          <li>Producer is never coupled to, or blocked by, the fraud engine.</li>
-        </ul>
-      </div>
+  <div class="content" style="display:flex; gap:24px; margin-top:18px">
+    <div style="width:290px"><div class="flowcol">
+      <div class="node y">Transaction Service<small>producer</small></div><div class="arrow">↓</div>
+      <div class="node b">Kafka Topic<small>partitioned log</small></div><div class="arrow">↓</div>
+      <div class="node navy">Fraud Detection Consumers<small>scale horizontally</small></div><div class="arrow">↓</div>
+      <div class="node">Processing Pipeline<small>classify → score → decide</small></div>
+    </div></div>
+    <div style="flex:1" class="grid">
+      <div class="card"><h3>What Kafka buys us</h3><ul>
+        <li><b>Decouples</b> transaction processing from fraud detection.</li>
+        <li>High-throughput, <b>asynchronous</b> event streaming.</li>
+        <li>Multiple independent <b>consumers</b> (scoring, audit, analytics).</li>
+        <li><b>Replay</b> — re-run history against a new model version.</li>
+        <li>Producer is never coupled to, or blocked by, the fraud engine.</li></ul></div>
       <div class="card"><h3>Topic organisation</h3>
-        <p><span class="pill">transaction-events</span> raw authorisation events (producer → detection)</p>
-        <p style="margin-top:8px"><span class="pill">fraud-decisions</span> scored results for downstream systems</p>
-        <p style="margin-top:8px"><span class="pill">fraud-alerts</span> high-risk cases → Alert Service → dashboard</p>
+        <p><span class="pill">type-of-payment</span> classified transaction events (producer → detection)</p>
+        <p style="margin-top:8px"><span class="pill">fraud-alerts</span> high-risk decisions → Alert Service → dashboard</p>
         <p style="margin-top:12px" class="muted"><span class="tag impl">impl</span> Kafka (KRaft) runs in the Docker stack.
-          <span class="tag proto">proto</span> live consumer wiring is partial — detection currently runs synchronously via the API for the demo.</p>
-      </div>
+          <span class="tag proto">proto</span> live consumer wiring is partial — detection currently runs synchronously via the API for the demo.</p></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 7 — DYNAMIC FRAUD DETECTION ============ -->
+<!-- 7 DYNAMIC DETECTION -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Core Idea</div>
   <h1 class="title">Dynamic, transaction-type-aware detection</h1>
-
-  <div class="content flex" style="gap:22px">
-    <div style="width:250px">
-      <div class="flowcol">
-        <div class="node y">Transaction Type</div><div class="arrow">↓</div>
-        <div class="node">Transaction Context</div><div class="arrow">↓</div>
-        <div class="node b">Relevant Features</div><div class="arrow">↓</div>
-        <div class="node b">Relevant Detection Strategy</div><div class="arrow">↓</div>
-        <div class="node navy">Risk Score</div>
-      </div>
-      <p class="muted" style="font-size:11px; margin-top:12px">Instead of one model for everything, classification
-        <b>activates only the fraud vectors that can occur</b> for that product line.</p>
-    </div>
-
+  <div class="content" style="display:flex; gap:22px">
+    <div style="width:250px"><div class="flowcol">
+      <div class="node y">Transaction Type</div><div class="arrow">↓</div>
+      <div class="node">Transaction Context</div><div class="arrow">↓</div>
+      <div class="node b">Relevant Features</div><div class="arrow">↓</div>
+      <div class="node b">Relevant Detection Strategy</div><div class="arrow">↓</div>
+      <div class="node navy">Risk Score</div></div>
+      <p class="muted" style="font-size:11px; margin-top:12px">Classification <b>activates only the fraud vectors that can occur</b> for that product line — not one model for everything.</p></div>
     <div style="flex:1">
       <table>
+        <colgroup><col style="width:210px"><col></colgroup>
         <tr><th>Transaction type</th><th>Illustrative relevant signals</th></tr>
         <tr><td>Private-label credit card</td><td>gift-card MCC, promo abuse, in-store entry mode</td></tr>
         <tr><td>Co-branded / dual card</td><td>CVV/AVS mismatch, magstripe fallback, card-testing bursts</td></tr>
@@ -437,120 +397,97 @@
         <tr><td>Digital wallet payment</td><td>token provisioning age, device change, account-takeover</td></tr>
         <tr><td>E-commerce checkout</td><td>CNP, shipping/billing mismatch, IP + device fingerprint</td></tr>
       </table>
-      <div class="flex" style="gap:14px; margin-top:12px">
-        <div class="card" style="flex:1"><h3 style="font-size:13px">Payment txn → signals</h3><p>amount · merchant · device · location · velocity · historical behaviour</p></div>
-        <div class="card" style="flex:1"><h3 style="font-size:13px">Credit application → signals</h3><p>identity · application velocity · device history · account history · behavioural anomalies</p></div>
-      </div>
-      <p class="muted" style="font-size:11px;margin-top:8px"><span class="tag impl">impl</span> 8-type taxonomy + 11 observed fraud vectors in the dataset;
-        rule-map + ML select the active signals. <span class="tag prop">proposed</span> per-type specialist sub-models.</p>
+      <p class="muted" style="font-size:11px;margin-top:8px"><span class="tag impl">impl</span> 8-type taxonomy + 11 observed fraud vectors; rule-map + ML select the active signals. <span class="tag prop">proposed</span> per-type specialist sub-models.</p>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 7b — TAXONOMY LEGEND ============ -->
+<!-- 7b TAXONOMY -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Reading the Codes</div>
   <h1 class="title">Fraud-vector &amp; actor taxonomy</h1>
-  <p class="lead" style="margin-top:4px">Every alert carries a <span class="pill">VECTOR</span> (what pattern) and an actor
-    (who did it). Format: <b>&lt;product-line&gt;-&lt;n&gt;</b>. The counts below are the fraud cases actually present in our 40-day dataset.</p>
-
-  <div class="content flex" style="gap:20px; margin-top:12px">
-    <div style="flex:1.5">
+  <p class="lead" style="margin-top:4px">Each alert carries a <span class="pill">VECTOR</span> (what pattern) and an actor (who). Counts are the fraud cases present in the 40-day dataset.</p>
+  <div class="content" style="display:flex; gap:18px; margin-top:12px">
+    <div style="width:600px">
       <table>
-        <tr><th style="width:70px">Vector</th><th>Meaning</th><th style="width:74px">Cases</th></tr>
-        <tr><td><span class="pill">CB-2</span></td><td>Co-branded <b>card-testing</b> — bursts of tiny declined CNP auths (stolen-card validation)</td><td>77</td></tr>
-        <tr><td><span class="pill">PF-1</span></td><td>Promotional-financing abuse — exploiting 0%/deferred-interest plans</td><td>40</td></tr>
+        <colgroup><col style="width:64px"><col><col style="width:56px"></colgroup>
+        <tr><th>Vector</th><th>Meaning</th><th>Cases</th></tr>
+        <tr><td><span class="pill">CB-2</span></td><td>Co-branded <b>card-testing</b> — tiny declined CNP auths (stolen-card validation)</td><td>77</td></tr>
+        <tr><td><span class="pill">PF-1</span></td><td>Promotional-financing abuse — exploiting deferred-interest plans</td><td>40</td></tr>
         <tr><td><span class="pill">CB-4</span></td><td>Co-branded account misuse / unauthorized high-value spend</td><td>26</td></tr>
-        <tr><td><span class="pill">APP-2</span></td><td>Real-time credit <b>application</b> fraud — synthetic-identity onboarding</td><td>25</td></tr>
-        <tr><td><span class="pill">PL-2</span></td><td>Private-label <b>gift-card / stored-value</b> cash-out purchase</td><td>24</td></tr>
-        <tr><td><span class="pill">CC-1</span></td><td>CareCredit anomaly — provider / health-MCC amount irregularity</td><td>22</td></tr>
-        <tr><td><span class="pill">X-1</span></td><td>Cross-cutting <b>high-amount</b> anomaly (applies across product lines)</td><td>12</td></tr>
+        <tr><td><span class="pill">APP-2</span></td><td>Real-time credit <b>application</b> fraud — synthetic identity</td><td>25</td></tr>
+        <tr><td><span class="pill">PL-2</span></td><td>Private-label <b>gift-card / stored-value</b> cash-out</td><td>24</td></tr>
+        <tr><td><span class="pill">CC-1</span></td><td>CareCredit anomaly — provider / health-MCC irregularity</td><td>22</td></tr>
+        <tr><td><span class="pill">X-1</span></td><td>Cross-cutting <b>high-amount</b> anomaly (any product line)</td><td>12</td></tr>
         <tr><td><span class="pill">EC-1</span></td><td>E-commerce CNP with <b>CVV/AVS mismatch</b></td><td>10</td></tr>
-        <tr><td><span class="pill">DW-1</span></td><td>Digital-wallet <b>account-takeover</b> / suspicious token provisioning</td><td>6</td></tr>
-        <tr><td><span class="pill">CB-1</span></td><td>Co-branded <b>magstripe fallback</b> / counterfeit entry</td><td>4</td></tr>
-        <tr><td><span class="pill">CB-3</span></td><td>Co-branded <b>cash-like MCC</b> abuse (quasi-cash / money transfer)</td><td>4</td></tr>
+        <tr><td><span class="pill">DW-1</span></td><td>Digital-wallet <b>account-takeover</b> / token provisioning</td><td>6</td></tr>
+        <tr><td><span class="pill">CB-1 / CB-3</span></td><td>Co-branded magstripe fallback / cash-like MCC abuse</td><td>4+4</td></tr>
       </table>
     </div>
     <div style="flex:1" class="grid">
       <div class="card"><h3>Product-line prefixes</h3>
-        <div style="font-size:12px;color:var(--slate);line-height:1.9">
-          <b>PL</b> Private-label · <b>CB</b> Co-branded / dual · <b>PF</b> Promotional financing ·
-          <b>IL</b> POS installment · <b>CC</b> CareCredit · <b>APP</b> Credit application ·
-          <b>DW</b> Digital wallet · <b>EC</b> E-commerce · <b>X</b> Cross-cutting</div></div>
+        <p style="line-height:1.9"><b>PL</b> Private-label · <b>CB</b> Co-branded · <b>PF</b> Promo financing · <b>IL</b> POS installment · <b>CC</b> CareCredit · <b>APP</b> Credit application · <b>DW</b> Digital wallet · <b>EC</b> E-commerce · <b>X</b> Cross-cutting</p></div>
       <div class="card"><h3>Actor codes — who initiated</h3>
-        <table><tr><th style="width:56px">Code</th><th>Actor</th><th style="width:60px">Cases</th></tr>
-          <tr><td><span class="pill">3P</span></td><td>Third-party fraudster (external)</td><td>109</td></tr>
-          <tr><td><span class="pill">B</span></td><td>First-party / cardholder (friendly fraud)</td><td>64</td></tr>
-          <tr><td><span class="pill">M</span></td><td>Merchant / associate (internal)</td><td>48</td></tr>
-          <tr><td><span class="pill">S</span></td><td>Synthetic identity / organized ring</td><td>29</td></tr>
+        <table><colgroup><col style="width:52px"><col><col style="width:52px"></colgroup>
+          <tr><th>Code</th><th>Actor</th><th>#</th></tr>
+          <tr><td><span class="pill">3P</span></td><td>Third-party fraudster</td><td>109</td></tr>
+          <tr><td><span class="pill">B</span></td><td>First-party / cardholder</td><td>64</td></tr>
+          <tr><td><span class="pill">M</span></td><td>Merchant / associate</td><td>48</td></tr>
+          <tr><td><span class="pill">S</span></td><td>Synthetic / ring</td><td>29</td></tr>
         </table></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 8 — FEATURES ============ -->
+<!-- 8 FEATURES -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Features &amp; Behavioral Analytics</div>
   <h1 class="title">Signals grouped by what they capture</h1>
-
-  <div class="content grid" style="grid-template-columns:1fr 1fr 1fr 1fr; margin-top:16px">
-    <div class="card"><h3>Customer</h3><ul>
-      <li>Transaction frequency</li><li>Average / z-scored amount</li><li>Historical spending profile</li>
-      <li>Account age</li><li>Prior fraud alerts</li></ul></div>
-    <div class="card"><h3>Transaction</h3><ul>
-      <li>Amount</li><li>Timestamp / hour</li><li>Payment &amp; entry method</li>
-      <li>Transaction type</li><li>Merchant · MCC · channel</li></ul></div>
-    <div class="card"><h3>Behavioral</h3><ul>
-      <li>Velocity</li><li>Sudden spend change</li><li>Unusual timing</li>
-      <li>Location deviation</li><li>Device change</li></ul></div>
-    <div class="card"><h3>Network / relationship</h3><ul>
-      <li>Shared device</li><li>Shared IP</li><li>Shared merchant</li>
-      <li>Repeated suspicious entities</li><li>Transaction linkage</li></ul></div>
+  <div class="content grid" style="grid-template-columns:repeat(4,1fr); margin-top:16px">
+    <div class="card"><h3>Customer</h3><ul><li>Transaction frequency</li><li>Average / z-scored amount</li><li>Spending profile</li><li>Account age</li><li>Prior fraud alerts</li></ul></div>
+    <div class="card"><h3>Transaction</h3><ul><li>Amount</li><li>Timestamp / hour</li><li>Payment &amp; entry method</li><li>Transaction type</li><li>Merchant · MCC · channel</li></ul></div>
+    <div class="card"><h3>Behavioral</h3><ul><li>Velocity</li><li>Sudden spend change</li><li>Unusual timing</li><li>Location deviation</li><li>Device change</li></ul></div>
+    <div class="card"><h3>Network</h3><ul><li>Shared device</li><li>Shared IP</li><li>Shared merchant</li><li>Repeated entities</li><li>Transaction linkage</li></ul></div>
   </div>
-
-  <div class="flex" style="gap:16px; margin-top:16px">
+  <div style="display:flex; gap:16px; margin-top:16px">
     <div class="card" style="flex:1.3"><h3>Behavioral baseline from 39-day history <span class="tag impl">impl</span></h3>
-      <p>Each account's prior 39 days are stored in PostgreSQL. On the 40th ("current") day we retrieve
-        <b>only that account's</b> history (index-backed) to compute its baseline — mean/spend profile, channel mix,
-        first/last seen — so anomalies are judged <b>relative to the customer</b>, not a global average.</p></div>
+      <p>Each account's prior 39 days live in PostgreSQL. On the 40th day we retrieve <b>only that account's</b> history
+        (index-backed) to compute its baseline — mean spend, channel mix, first/last seen — so anomalies are judged
+        relative to the customer, not a global average.</p></div>
     <div class="card" style="flex:1; background:#0f1830;border-color:#223056">
-      <h3 style="color:#fff">26 shared features · one function</h3>
-      <pre class="code" style="background:transparent;border:none;padding:6px 0">FEATURE_ORDER = [
+      <span class="fname" style="color:#8ea3c8">backend/app/ml_features.py</span>
+      <pre class="code" style="background:transparent;border:none;padding:2px 0">FEATURE_ORDER = [
  <span class="s">"amount"</span>,<span class="s">"hour"</span>,<span class="s">"amount_zscore"</span>,
  <span class="s">"cvv_no_match"</span>,<span class="s">"avs_no_match"</span>,
  <span class="s">"acct_txn_count"</span>,<span class="s">"acct_avg_amount"</span>,
- chan_*, entry_*, mcc_* ... ]  <span class="c"># train==serve</span></pre></div>
+ chan_*, entry_*, mcc_* ]  <span class="c"># train==serve</span></pre></div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 9 — ML + EMBEDDINGS + VECTOR ============ -->
+<!-- 9 ML + EMBEDDINGS + VECTOR -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">AI Components</div>
   <h1 class="title">ML + Embeddings + Vector search — distinct roles</h1>
-
-  <div class="content flex" style="gap:20px; margin-top:14px">
+  <div class="content" style="display:flex; gap:20px; margin-top:14px">
     <div style="flex:1.1">
-      <svg viewBox="0 0 520 300" width="520" height="290">
+      <svg viewBox="0 0 520 300" width="500" height="290">
         <defs><marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5b6472"/></marker></defs>
-        <rect x="10" y="130" width="110" height="40" rx="8" fill="#fff9ec" stroke="#F4A81D"/><text x="65" y="155" text-anchor="middle" font="700 12px Arial" style="font:700 12px Arial;fill:#1F2A44">Transaction</text>
+        <rect x="10" y="130" width="110" height="40" rx="8" fill="#fff9ec" stroke="#F4A81D"/><text x="65" y="155" text-anchor="middle" style="font:700 12px Arial;fill:#1F2A44">Transaction</text>
         <rect x="170" y="60" width="120" height="40" rx="8" fill="#fff" stroke="#1F2A44"/><text x="230" y="85" text-anchor="middle" style="font:700 11px Arial;fill:#1F2A44">Features</text>
         <rect x="170" y="200" width="120" height="40" rx="8" fill="#fff" stroke="#1F2A44"/><text x="230" y="225" text-anchor="middle" style="font:700 11px Arial;fill:#1F2A44">Embedding</text>
         <rect x="330" y="30" width="180" height="40" rx="8" fill="#fff" stroke="#1F2A44"/><text x="420" y="49" text-anchor="middle" style="font:700 11px Arial;fill:#1F2A44">ML Model</text><text x="420" y="63" text-anchor="middle" style="font:10px Arial;fill:#5b6472">→ fraud score</text>
@@ -559,141 +496,114 @@
         <path d="M120,155 L168,215" fill="none" stroke="#8f98a8" stroke-width="1.4" marker-end="url(#a2)"/>
         <path d="M290,78 L328,55" fill="none" stroke="#8f98a8" stroke-width="1.4" marker-end="url(#a2)"/>
         <path d="M290,220 L328,220" fill="none" stroke="#8f98a8" stroke-width="1.4" marker-end="url(#a2)"/>
-        <rect x="205" y="270" width="270" height="26" rx="6" fill="#fdeeee" stroke="#ED1C24"/><text x="340" y="287" text-anchor="middle" style="font:700 11px Arial;fill:#1F2A44">Structured evidence → AWS Bedrock → reason</text>
+        <rect x="205" y="270" width="270" height="26" rx="6" fill="#fdeeee" stroke="#ED1C24"/><text x="340" y="287" text-anchor="middle" style="font:700 11px Arial;fill:#1F2A44">Structured evidence → Bedrock → reason</text>
         <path d="M420,70 L420,120 L360,120 L360,268" fill="none" stroke="#c9a15a" stroke-width="1.3" marker-end="url(#a2)"/>
         <path d="M420,240 L420,268" fill="none" stroke="#8f98a8" stroke-width="1.3" marker-end="url(#a2)"/>
       </svg>
     </div>
     <div style="flex:1" class="grid">
-      <div class="card"><h3>ML model <span class="tag impl">impl</span></h3><p>RandomForest (fraud probability) + IsolationForest (anomaly). Produces the <b>core numerical risk</b>.</p></div>
-      <div class="card"><h3>Embeddings <span class="tag impl">impl</span></h3><p>Scaled 26-dim behavioral vector — a transaction's semantic/behavioral fingerprint.</p></div>
-      <div class="card"><h3>pgvector <span class="tag impl">impl</span></h3><p>kNN over <b>2,750</b> labelled cases (250 fraud + 2,500 legit) → nearest historical precedents + RAG.</p></div>
-      <div class="card" style="background:#fff;border-color:var(--r)"><h3 style="color:var(--r)">LLM is not the detector</h3>
-        <p>Deterministic models produce the risk. The LLM only does <b>contextual reasoning, explanation and analyst assistance.</b></p></div>
+      <div class="card"><h3>ML model <span class="tag impl">impl</span></h3><p>RandomForest (fraud probability) + IsolationForest (anomaly) → the <b>core numerical risk</b>.</p></div>
+      <div class="card"><h3>Embeddings <span class="tag impl">impl</span></h3><p>Scaled 26-dim behavioral vector — a transaction's behavioral fingerprint.</p></div>
+      <div class="card"><h3>pgvector <span class="tag impl">impl</span></h3><p>kNN over <b>2,750</b> labelled cases (250 fraud + 2,500 legit) → nearest precedents + RAG.</p></div>
+      <div class="card" style="background:#fff;border-color:var(--r)"><h3 style="color:var(--r)">LLM is not the detector</h3><p>Deterministic models produce the risk. The LLM only does <b>reasoning, explanation and analyst assistance.</b></p></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 10 — DECISION ENGINE ============ -->
+<!-- 10 DECISION ENGINE -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Decision Engine</div>
   <h1 class="title">Controlled fusion — the model decides, not the LLM</h1>
-
-  <div class="content flex" style="gap:26px; margin-top:14px">
-    <div style="width:330px">
-      <div class="card" style="padding:12px 14px">
-        <div style="text-align:center">
-          <div style="font-size:12px;color:var(--slate);line-height:2">
-            ML Risk Score<br>+ Behavioral Signals<br>+ Rule-Based Signals<br>+ Similar Fraud Cases<br>+ Transaction Context</div>
-          <div class="arrow">↓</div>
-          <div class="node navy" style="display:inline-block;padding:8px 22px">DECISION ENGINE</div>
-          <div class="arrow">↓</div>
-          <div class="flex" style="gap:8px;justify-content:center">
-            <div class="node" style="border-color:var(--green);color:var(--green)">APPROVE</div>
-            <div class="node y">REVIEW</div>
-            <div class="node r">BLOCK</div>
-          </div>
-        </div>
+  <div class="content" style="display:flex; gap:24px; margin-top:14px">
+    <div style="width:340px">
+      <div class="card" style="padding:12px 14px; text-align:center">
+        <div style="font-size:12px;color:var(--slate);line-height:1.9">ML Risk Score<br>+ Behavioral Signals<br>+ Rule-Based Signals<br>+ Similar Fraud Cases<br>+ Transaction Context</div>
+        <div class="arrow">↓</div>
+        <div class="node navy" style="display:inline-block;padding:8px 22px">DECISION ENGINE</div>
+        <div class="arrow">↓</div>
+        <div style="display:flex; gap:8px; justify-content:center">
+          <div class="node" style="border-color:var(--green);color:var(--green)">APPROVE</div>
+          <div class="node y">REVIEW</div><div class="node r">BLOCK</div></div>
       </div>
-      <p class="muted" style="font-size:11px;margin-top:10px">Thresholds (implemented): risk ≥ 0.85 → decline ·
-        ≥ 0.60 → step-up · ≥ 0.40 → manual review · else approve. A <b>consensus boost</b> raises risk when
-        multiple agents agree.</p>
+      <div class="card" style="margin-top:12px; background:#0f1830;border-color:#223056">
+        <span class="fname" style="color:#8ea3c8">backend/app/agents.py</span>
+        <pre class="code" style="background:transparent;border:none;padding:2px 0"><span class="k">def</span> _decision(risk):
+  <span class="k">if</span> risk >= <span class="n">0.85</span>: <span class="k">return</span> <span class="s">"decline"</span>
+  <span class="k">if</span> risk >= <span class="n">0.60</span>: <span class="k">return</span> <span class="s">"step_up_authentication"</span>
+  <span class="k">if</span> risk >= <span class="n">0.40</span>: <span class="k">return</span> <span class="s">"manual_review"</span>
+  <span class="k">return</span> <span class="s">"approve"</span></pre></div>
     </div>
-
     <div style="flex:1" class="grid">
-      <div class="card"><h3>Guardrail: no uncontrolled financial decisions</h3>
-        <p>The LLM never issues an approve/block. It returns text; the deterministic <b>Decision Engine</b> maps fused
-          risk → action. This keeps the money-path auditable and reproducible.</p></div>
+      <div class="card"><h3>Guardrail: no uncontrolled financial decisions</h3><p>The LLM never issues an approve/block — it returns text. The deterministic Decision Engine maps fused risk → action, keeping the money-path auditable and reproducible. A <b>consensus boost</b> raises risk when ≥2 agents agree.</p></div>
       <div class="card"><h3>Every decision is persisted for audit <span class="tag impl">impl</span></h3>
-        <div class="flex" style="gap:18px;flex-wrap:wrap;margin-top:4px">
-          <ul style="font-size:12px;color:var(--slate)"><li>Risk score</li><li>Triggered signals</li><li>Relevant rules / vectors</li><li>Similar historical cases</li></ul>
-          <ul style="font-size:12px;color:var(--slate)"><li>Decision + actor</li><li>Explanation</li><li>Timestamp</li><li>Model / version</li></ul>
-        </div></div>
+        <div style="display:flex; gap:18px;flex-wrap:wrap;margin-top:4px">
+          <ul style="font-size:12px;color:var(--slate)"><li>Risk score</li><li>Triggered signals</li><li>Rules / vectors</li><li>Similar cases</li></ul>
+          <ul style="font-size:12px;color:var(--slate)"><li>Decision + actor</li><li>Explanation</li><li>Timestamp</li><li>Model / version</li></ul></div></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 11 — EXPLAINABILITY ============ -->
+<!-- 11 EXPLAINABILITY -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Explainable AI</div>
   <h1 class="title">Evidence, not just a "fraud" flag</h1>
-
-  <div class="content flex" style="gap:24px; margin-top:16px">
+  <div class="content" style="display:flex; gap:24px; margin-top:16px">
     <div style="width:300px">
       <div class="stat" style="background:var(--r)"><span style="color:#fff">Transaction</span><b style="color:#fff">$2,850</b><span style="color:#ffe">unseen-device purchase</span></div>
-      <div style="text-align:center" class="arrow">↓</div>
-      <div class="card" style="border-color:var(--r);text-align:center"><h3 style="justify-content:center;color:var(--r)">RISK: HIGH</h3>
-        <p style="font-size:13px">Final decision → <b style="color:var(--r)">REVIEW / BLOCK</b></p></div>
-      <p class="muted" style="font-size:11px;margin-top:12px">This is an <b>illustrative</b> explanation format; the live system
-        emits the same evidence structure (see dashboard).</p>
+      <div class="arrow">↓</div>
+      <div class="card" style="border-color:var(--r);text-align:center"><h3 style="justify-content:center;color:var(--r)">RISK: HIGH</h3><p style="font-size:13px">Final decision → <b style="color:var(--r)">REVIEW / BLOCK</b></p></div>
+      <p class="muted" style="font-size:11px;margin-top:12px">Illustrative format; the live system emits the same evidence structure (see dashboard).</p>
     </div>
-
     <div style="flex:1">
       <div class="card"><h3>Why this was flagged — ranked evidence</h3>
         <ol style="margin-left:18px;font-size:13px;color:var(--ink);line-height:1.9">
           <li>Amount is <b>significantly above</b> the customer's historical average.</li>
           <li>Originated from a <b>previously unseen device</b>.</li>
-          <li><b>Multiple transactions</b> occurred within a short time window (velocity).</li>
+          <li><b>Multiple transactions</b> in a short time window (velocity).</li>
           <li><b>Location differs</b> from recent customer activity.</li>
-          <li>Similar historical transactions were <b>associated with fraud</b> (vector precedent).</li>
-        </ol>
-      </div>
-      <div class="card" style="margin-top:12px;background:var(--soft2)">
-        <h3>Live evidence contract <span class="tag impl">impl</span></h3>
-        <p class="muted">The <code>/investigate</code> and <code>/lookup</code> endpoints return: indicators, contributing signals,
-          nearest labelled cases, ML score, actor + fraud vector, and a Bedrock-generated reason — surfaced directly in the analyst UI.</p></div>
+          <li>Similar historical transactions were <b>associated with fraud</b> (vector precedent).</li></ol></div>
+      <div class="card" style="margin-top:12px;background:var(--soft2)"><h3>Live evidence contract <span class="tag impl">impl</span></h3>
+        <p><code>/investigate</code> and <code>/lookup</code> return: indicators, contributing signals, nearest labelled cases, ML score, actor + fraud vector, and a Bedrock reason — surfaced directly in the analyst UI.</p></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 12 — DASHBOARD ============ -->
+<!-- 12 DASHBOARD -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Analyst Experience · React</div>
   <h1 class="title">Fraud investigation workspace <span class="tag impl">implemented</span></h1>
-
-  <div class="content flex" style="gap:16px; margin-top:10px">
+  <div class="content" style="display:flex; gap:16px; margin-top:10px">
     <div style="flex:1.15">
       <div style="border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,.08)">
-        <!-- mock top bar -->
         <div style="display:flex; align-items:center; justify-content:space-between; padding:8px 12px; border-bottom:1px solid var(--line)">
-          <span style="display:flex;align-items:center;gap:7px"><img src="synchrony-logo.png" style="height:15px" alt="Synchrony"/>
-            <span style="font-size:9px;color:var(--slate);letter-spacing:2px;font-weight:700;border-left:1px solid var(--line);padding-left:7px">ANALYTICS</span></span>
-          <span style="font-size:9px;color:var(--slate)">● Live · Postgres + pgvector + Redis</span>
-        </div>
+          <span style="display:flex;align-items:center;gap:7px"><img src="synchrony-logo.png" style="height:15px"/><span style="font-size:9px;color:var(--slate);letter-spacing:2px;font-weight:700;border-left:1px solid var(--line);padding-left:7px">ANALYTICS</span></span>
+          <span style="font-size:9px;color:var(--slate)">● Live · Postgres + pgvector + Redis</span></div>
         <div style="display:flex">
-          <!-- mock sidebar -->
           <div style="width:120px; background:#1F2A44; padding:10px 8px; color:#c9d2e6; font-size:9px">
             <div style="background:var(--y);color:#1F2A44;border-radius:6px;padding:5px 6px;font-weight:700;margin-bottom:4px">Overview</div>
-            <div style="padding:5px 6px">Fraudulent Accounts</div>
-            <div style="padding:5px 6px">Account Lookup</div>
-          </div>
-          <!-- mock body -->
+            <div style="padding:5px 6px">Fraudulent Accounts</div><div style="padding:5px 6px">Account Lookup</div></div>
           <div style="flex:1; padding:10px; background:#f6f8fb">
             <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:8px">
               <div style="background:var(--y);border-radius:8px;padding:6px"><b style="font-size:15px">52,260</b><br><span style="font-size:8px">Transactions</span></div>
               <div style="background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)"><b style="font-size:15px;color:var(--r)">85</b><br><span style="font-size:8px;color:var(--slate)">Fraud accts</span></div>
               <div style="background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)"><b style="font-size:15px;color:var(--navy)">250</b><br><span style="font-size:8px;color:var(--slate)">Alerts</span></div>
               <div style="background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)"><b style="font-size:15px;color:var(--navy)">188</b><br><span style="font-size:8px;color:var(--slate)">Critical</span></div>
-              <div style="background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)"><b style="font-size:15px;color:var(--navy)">CB-2</b><br><span style="font-size:8px;color:var(--slate)">Top vector</span></div>
-            </div>
+              <div style="background:#fff;border-radius:8px;padding:6px;border:1px solid var(--line)"><b style="font-size:15px;color:var(--navy)">CB-2</b><br><span style="font-size:8px;color:var(--slate)">Top vector</span></div></div>
             <div style="display:flex;gap:6px">
               <div style="flex:1.6;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px">
                 <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:5px">Detected Fraudulent Accounts</div>
@@ -701,99 +611,73 @@
                   <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--line)"><b class="mono" style="color:var(--navy)">ACC-000468</b><span class="pill">CB-2</span><span>24</span><span style="color:var(--r);font-weight:700">100</span><span>$598.59</span></div>
                   <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--line)"><b class="mono" style="color:var(--navy)">ACC-000166</b><span class="pill">CB-2</span><span>22</span><span style="color:var(--r);font-weight:700">100</span><span>$23.25</span></div>
                   <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--line)"><b class="mono" style="color:var(--navy)">ACC-000595</b><span class="pill">CB-2</span><span>17</span><span style="color:var(--r);font-weight:700">100</span><span>$15.00</span></div>
-                  <div style="display:flex;justify-content:space-between;padding:3px 0"><b class="mono" style="color:var(--navy)">ACC-000314</b><span class="pill">X-1</span><span>1</span><span style="color:var(--amber);font-weight:700">99</span><span>$1,715</span></div>
-                </div>
-              </div>
+                  <div style="display:flex;justify-content:space-between;padding:3px 0"><b class="mono" style="color:var(--navy)">ACC-000314</b><span class="pill">X-1</span><span>1</span><span style="color:var(--amber);font-weight:700">99</span><span>$1,715</span></div></div></div>
               <div style="flex:1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px">
                 <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:5px">Fraud Account Lookup</div>
                 <div style="display:flex;gap:3px;margin-bottom:4px"><span style="flex:1;background:var(--navy);color:#fff;border-radius:4px;padding:3px;font-size:8px;text-align:center">Account ID</span><span style="flex:1;border:1px solid var(--line);border-radius:4px;padding:3px;font-size:8px;text-align:center;color:var(--slate)">Txn ID</span></div>
                 <div style="border:1px solid var(--line);border-radius:4px;padding:4px;font-size:8px;color:var(--slate)" class="mono">ACC-000468</div>
-                <div style="margin-top:5px;background:#fdeeee;border:1px solid #f5c2c2;border-radius:5px;padding:5px;font-size:8px">
-                  <b style="color:var(--r)">FRAUDULENT</b> · CB-2 · third-party<br>
-                  <span style="color:var(--slate)">cvv mismatch · avs mismatch · small-amt decline</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="muted" style="font-size:10.5px;margin-top:5px">Live React + Tailwind dashboard (rendered layout shown), backed by real API calls over the PostgreSQL history store.</p>
+                <div style="margin-top:5px;background:#fdeeee;border:1px solid #f5c2c2;border-radius:5px;padding:5px;font-size:8px"><b style="color:var(--r)">FRAUDULENT</b> · CB-2 · third-party<br><span style="color:var(--slate)">cvv mismatch · avs mismatch · small-amt decline</span></div></div>
+            </div></div></div></div>
+      <p class="muted" style="font-size:10.5px;margin-top:5px">Live React + Tailwind dashboard (rendered layout), backed by real API calls over the PostgreSQL history store.</p>
     </div>
     <div style="flex:.85" class="grid">
-      <div class="card"><h3>Top metrics</h3><p>transactions analyzed · fraudulent accounts · fraud alerts · critical alerts · top fraud vector
-        <span class="muted">(blocked / under-review counts &amp; avg latency — <span class="tag prop">planned</span>)</span></p></div>
-      <div class="card"><h3>Fraudulent account list → detail</h3><p>Click any account to see: identifier · triggering transactions · who initiated (actor) ·
-        why flagged · indicators · ML score · 39-day context · recent history.</p></div>
-      <div class="card" style="border-color:var(--b)"><h3 style="color:var(--b)">Fraud Lookup</h3><p>Search by <b>primary key</b> — account_id or transaction_id — returns fraud status + evidence.
-        <span class="muted">Customer ID / merchant ID keys — <span class="tag prop">planned</span>.</span></p></div>
+      <div class="card"><h3>Top metrics</h3><p>transactions analyzed · fraudulent accounts · fraud alerts · critical alerts · top vector <span class="muted">(blocked / under-review counts &amp; avg latency — <span class="tag prop">planned</span>)</span></p></div>
+      <div class="card"><h3>Fraud account → detail</h3><p>Click any account: identifier · triggering transactions · who initiated (actor) · why flagged · indicators · ML score · 39-day context · recent history.</p></div>
+      <div class="card" style="border-color:var(--b)"><h3 style="color:var(--b)">Fraud Lookup</h3><p>Search by <b>primary key</b> — account_id / transaction_id — returns fraud status + evidence. <span class="muted">Customer/merchant ID keys — <span class="tag prop">planned</span>.</span></p></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 13 — DATABASE ============ -->
+<!-- 13 DATABASE -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Data &amp; Storage</div>
   <h1 class="title">Why Redis <i>and</i> PostgreSQL + pgvector</h1>
-
-  <div class="content flex" style="gap:22px; margin-top:14px">
-    <div style="width:250px">
-      <div class="flowcol">
-        <div class="node b">Kafka</div><div class="arrow">↓</div>
-        <div class="node">Processing</div><div class="arrow">↓</div>
-        <div class="node y">Redis<small>low-latency hot context</small></div><div class="arrow">↓</div>
-        <div class="node navy">PostgreSQL<small>persistent records</small></div><div class="arrow">↓</div>
-        <div class="node b">pgvector<small>similarity search</small></div>
-      </div>
-    </div>
-    <div style="flex:1" class="grid" style="grid-template-columns:1fr 1fr 1fr">
-      <div class="card"><h3>PostgreSQL <span class="tag impl">impl</span></h3><ul>
-        <li>Customer + account data</li><li>Transaction records (39-day history)</li><li>Fraud decisions / alerts</li>
-        <li>Model outputs</li><li>Audit trail</li></ul>
-        <p class="muted" style="margin-top:6px">1,000 accounts · 52,260 txns loaded · indexed <span class="mono">(account_id, event_time)</span>.</p></div>
-      <div class="card"><h3>pgvector <span class="tag impl">impl</span></h3><ul>
-        <li>Transaction embeddings</li><li>Historical fraud embeddings</li><li>kNN similarity search</li></ul>
-        <p class="muted" style="margin-top:6px">2,750 labelled case vectors (26-dim).</p></div>
-      <div class="card"><h3>Redis <span class="tag proto">proto</span></h3><ul>
-        <li>Hot customer context</li><li>Recent-transaction features</li><li>Velocity counters</li><li>Feature caching</li></ul>
-        <p class="muted" style="margin-top:6px">Running in stack; velocity agent integration in progress.</p></div>
+  <div class="content" style="display:flex; gap:22px; margin-top:14px">
+    <div style="width:230px"><div class="flowcol">
+      <div class="node b">Kafka</div><div class="arrow">↓</div>
+      <div class="node">Processing</div><div class="arrow">↓</div>
+      <div class="node y">Redis<small>low-latency hot context</small></div><div class="arrow">↓</div>
+      <div class="node navy">PostgreSQL<small>persistent records</small></div><div class="arrow">↓</div>
+      <div class="node b">pgvector<small>similarity search</small></div></div></div>
+    <div style="flex:1" class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><h3>PostgreSQL <span class="tag impl">impl</span></h3><ul><li>Customer + account data</li><li>Transactions (39-day)</li><li>Fraud decisions / alerts</li><li>Model outputs</li><li>Audit trail</li></ul><p class="muted" style="margin-top:6px">1,000 accounts · 52,260 txns · indexed <span class="mono">(account_id, event_time)</span>.</p></div>
+      <div class="card"><h3>pgvector <span class="tag impl">impl</span></h3><ul><li>Transaction embeddings</li><li>Fraud embeddings</li><li>kNN similarity</li></ul><p class="muted" style="margin-top:6px">2,750 labelled case vectors (26-dim).</p></div>
+      <div class="card"><h3>Redis <span class="tag proto">proto</span></h3><ul><li>Hot customer context</li><li>Recent-txn features</li><li>Velocity counters</li><li>Feature caching</li></ul><p class="muted" style="margin-top:6px">Running in stack; velocity agent integration in progress.</p></div>
     </div>
   </div>
   <div class="card" style="margin-top:14px"><h3>Efficient context retrieval — never dump the whole DB to the model</h3>
-    <p>On the 40th day we fetch <b>one account's</b> prior-39-day rows via the composite index, compute its baseline in-service,
-      and pass only that context to feature-engineering + embeddings. This keeps scoring fast and privacy-scoped.</p></div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+    <p>On the 40th day we fetch <b>one account's</b> prior-39-day rows via the composite index, compute its baseline in-service, and pass only that context to features + embeddings. Fast and privacy-scoped.</p></div>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 14 — SECURITY / RESPONSIBLE AI / ENG ============ -->
+<!-- 14 SECURITY / RESPONSIBLE AI / ENG -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Engineering Rigor</div>
   <h1 class="title">Security · Responsible AI · Engineering</h1>
-
-  <div class="content grid" style="grid-template-columns:1fr 1fr 1fr; margin-top:14px">
+  <div class="content grid" style="grid-template-columns:repeat(3,1fr); margin-top:14px">
     <div class="card"><h3>Security</h3><ul>
-      <li>JWT auth, bcrypt-hashed credentials <span class="tag impl">impl</span></li>
-      <li>No hardcoded login — verified in DB <span class="tag impl">impl</span></li>
+      <li>JWT auth, bcrypt credentials <span class="tag impl">impl</span></li>
+      <li>No hardcoded login (DB-verified) <span class="tag impl">impl</span></li>
       <li>Pydantic input validation <span class="tag impl">impl</span></li>
       <li>Scoped DB access, CORS <span class="tag impl">impl</span></li>
       <li>RBAC / roles <span class="tag prop">proposed</span></li>
-      <li>Secrets manager, TLS, at-rest encryption <span class="tag prop">proposed</span></li></ul></div>
+      <li>Secrets mgr, TLS, at-rest enc. <span class="tag prop">proposed</span></li></ul></div>
     <div class="card"><h3>Responsible AI</h3><ul>
-      <li>Explainable decisions (evidence) <span class="tag impl">impl</span></li>
-      <li>Human-in-the-loop review/step-up <span class="tag impl">impl</span></li>
+      <li>Explainable decisions <span class="tag impl">impl</span></li>
+      <li>Human-in-the-loop review <span class="tag impl">impl</span></li>
       <li>LLM guardrails + PII redaction <span class="tag impl">impl</span></li>
       <li>No unrestricted LLM decisioning <span class="tag impl">impl</span></li>
       <li>Model / bias monitoring <span class="tag prop">proposed</span></li>
-      <li>Full auditability of decisions <span class="tag proto">proto</span></li></ul></div>
+      <li>Decision auditability <span class="tag proto">proto</span></li></ul></div>
     <div class="card"><h3>Engineering</h3><ul>
       <li>Modular services, API-first <span class="tag impl">impl</span></li>
       <li>Docker Compose stack <span class="tag impl">impl</span></li>
@@ -803,23 +687,144 @@
       <li>Unit tests, CI, monitoring <span class="tag prop">proposed</span></li></ul></div>
   </div>
   <div class="card" style="margin-top:14px;background:var(--soft2)"><h3>Honesty note for evaluators</h3>
-    <p>Constraints are stated, not hidden: the AWS Organization SCP blocks Secrets Manager / Cognito, so credentials are
-      bcrypt-hashed in PostgreSQL for now; Anthropic Claude needs account verification, so the LLM layer runs on
-      <b>Bedrock Llama-3 8B</b>. These are deployment choices, clearly labelled.</p></div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+    <p>Constraints are stated, not hidden: the AWS Organization SCP blocks Secrets Manager / Cognito, so credentials are bcrypt-hashed in PostgreSQL for now; Anthropic Claude needs account verification, so the LLM layer runs on <b>Bedrock Meta Llama-3 8B</b>. Deployment choices, clearly labelled.</p></div>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 15 — SCALABILITY / RESULTS / ROADMAP ============ -->
+<!-- 15 CODE PROOF 1 -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+  <div class="kicker">Implementation Proof · 1 / 2</div>
+  <h1 class="title">Layers in code — Frontend · Backend · Database</h1>
+  <div class="content grid" style="grid-template-columns:repeat(3,1fr); margin-top:12px">
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">1 · Frontend <span class="tag impl">React</span></h3>
+      <span class="fname">my-react-app/src/components/SignInModal.jsx</span>
+      <pre class="code"><span class="k">const</span> res = <span class="k">await</span> fetch(
+  <span class="s">`${API_BASE}/auth/login`</span>, {
+  method: <span class="s">"POST"</span>,
+  headers: {<span class="s">"Content-Type"</span>:
+            <span class="s">"application/json"</span>},
+  body: JSON.stringify(
+        { email, password }),
+});
+<span class="k">if</span> (res.ok) {
+  <span class="k">const</span> d = <span class="k">await</span> res.json();
+  onSignIn(d.access_token, email);
+}</pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">React UI authenticates against the real API and stores the JWT for subsequent calls.</p>
+    </div>
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">2 · Backend <span class="tag impl">FastAPI</span></h3>
+      <span class="fname">backend/app/main.py</span>
+      <pre class="code"><span class="d">@app.post</span>(<span class="s">"/investigate"</span>)
+<span class="k">def</span> investigate(
+    txn: TransactionIn,
+    user: str = Depends(
+        get_current_user)):
+  <span class="k">return</span> {<span class="s">"analyst"</span>: user,
+    **_orchestrator.run(
+        txn.model_dump())}
+
+<span class="d">@app.get</span>(<span class="s">"/accounts/fraud"</span>)
+<span class="k">def</span> accounts_fraud(user=Depends(
+        get_current_user)):
+  <span class="k">return</span> {<span class="s">"accounts"</span>:
+    analytics.fraud_accounts()}</pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">API-first: typed, JWT-protected endpoints; the orchestrator runs the multi-agent pipeline.</p>
+    </div>
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">3 · Database <span class="tag impl">PG + pgvector</span></h3>
+      <span class="fname">alembic/…/0001_initial.py · models.py</span>
+      <pre class="code">op.execute(
+ <span class="s">"CREATE EXTENSION IF NOT "</span>
+ <span class="s">"EXISTS vector"</span>)
+
+<span class="c"># models.py</span>
+embedding = Column(
+    Vector(EMBEDDING_DIM))
+
+<span class="c"># analytics.py — kNN</span>
+<span class="s">"ORDER BY embedding <-> "</span>
+<span class="s">"'[...]'::vector LIMIT :k"</span></pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">pgvector enabled by migration; embeddings stored as a vector column; similarity via the <span class="mono">&lt;-&gt;</span> operator.</p>
+    </div>
+  </div>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
+    <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+    <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
+</section>
+
+<!-- 16 CODE PROOF 2 -->
+<section class="slide">
+  <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+  <div class="kicker">Implementation Proof · 2 / 2</div>
+  <h1 class="title">Layers in code — AI · Cloud · Security</h1>
+  <div class="content grid" style="grid-template-columns:repeat(3,1fr); margin-top:12px">
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">4 · AI Layer <span class="tag impl">Bedrock</span></h3>
+      <span class="fname">backend/app/explain.py</span>
+      <pre class="code">rt = boto3.client(
+  <span class="s">"bedrock-runtime"</span>,
+  region_name=AWS_REGION)
+
+<span class="c"># guardrail: strip PII first</span>
+<span class="k">def</span> redact(txn):
+  safe[<span class="s">"ip_address"</span>]=<span class="s">"***"</span>
+  safe[<span class="s">"masked_pan"</span>]=pan[-4:]
+  <span class="k">return</span> safe
+
+rt.invoke_model(
+  modelId=model_id, body=...)</pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">Bedrock (Meta Llama) for explanations; embeddings + pgvector for similarity; PII redacted before any LLM call; template fallback.</p>
+    </div>
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">5 · Cloud Layer <span class="tag proto">AWS</span></h3>
+      <span class="fname">docker-compose.yml · config.py</span>
+      <pre class="code"><span class="c"># creds from host IAM role,</span>
+<span class="c"># never in the image</span>
+volumes:
+ - <span class="s">${HOME}/.aws:/root/.aws:ro</span>
+environment:
+  AWS_REGION: <span class="s">${AWS_REGION}</span>
+  BEDROCK_MODEL_ID: <span class="s">${...}</span>
+
+<span class="c"># health/monitoring hooks</span>
+<span class="d">@app.get</span>(<span class="s">"/health/deps"</span>)  <span class="c"># pg/redis/kafka</span></pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">Same Docker stack targets a single EC2; Bedrock live; health endpoints for monitoring. <span class="tag prop">proposed</span>: RDS, Secrets Manager, CloudWatch (see docs/aws-postgres.md).</p>
+    </div>
+    <div>
+      <h3 style="font-size:14px;color:var(--navy);margin-bottom:6px">6 · Security <span class="tag impl">Auth</span></h3>
+      <span class="fname">backend/app/security.py · schemas.py</span>
+      <pre class="code"><span class="c"># bcrypt verify vs Postgres</span>
+bcrypt.checkpw(pw.encode(),
+  user.password_hash.encode())
+jwt.encode({<span class="s">"sub"</span>:sub,
+  <span class="s">"exp"</span>:now+TTL}, JWT_SECRET)
+
+<span class="c"># input validation</span>
+<span class="k">class</span> LoginIn(BaseModel):
+  email: str = Field(
+     min_length=<span class="n">3</span>,max_length=<span class="n">254</span>)</pre>
+      <p class="muted" style="font-size:10.5px;margin-top:6px">No hardcoded secret (JWT key from env, credential in DB); bcrypt + JWT; Pydantic validates every request.</p>
+    </div>
+  </div>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
+    <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
+    <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
+</section>
+
+<!-- 17 SCALE / RESULTS / ROADMAP -->
+<section class="slide">
+  <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Scale · Results · Roadmap</div>
   <h1 class="title">Prototype results and the path to production</h1>
-
-  <div class="content flex" style="gap:18px; margin-top:10px">
+  <div class="content" style="display:flex; gap:18px; margin-top:10px">
     <div style="flex:1">
       <div class="grid" style="grid-template-columns:1fr 1fr; gap:10px">
         <div class="stat"><b>52,260</b><span>transactions loaded &amp; scorable</span></div>
@@ -829,14 +834,11 @@
       </div>
       <div class="card" style="margin-top:12px"><h3>Prototype evaluation <span class="tag proto">in-sample</span></h3>
         <table style="margin-top:2px">
-          <tr><th>Metric (risk ≥ 0.50)</th><th>Value</th><th>Metric</th><th>Value</th></tr>
-          <tr><td>Recall (245 / 250 frauds)</td><td><b>0.98</b></td><td>Precision</td><td><b>1.00</b></td></tr>
+          <tr><th>Metric (risk ≥ 0.50)</th><th style="width:70px">Value</th><th>Metric</th><th style="width:70px">Value</th></tr>
+          <tr><td>Recall (245 / 250)</td><td><b>0.98</b></td><td>Precision</td><td><b>1.00</b></td></tr>
           <tr><td>F1</td><td><b>0.99</b></td><td>False-positive rate</td><td><b>0.000</b></td></tr>
         </table>
-        <p class="muted" style="margin-top:6px;font-size:10.5px"><b>Read these critically:</b> the models were trained on this
-          <b>synthetic</b> dataset with no held-out split, and the injected fraud carries clearly-encoded signals — so these are
-          <b>in-sample</b> figures that confirm the pipeline learns the intended patterns, <b>not</b> generalization estimates.
-          A stratified train/test split, threshold tuning, and evaluation on harder / adversarial data are the immediate next steps.</p></div>
+        <p class="muted" style="margin-top:6px;font-size:10.5px"><b>Read critically:</b> models trained on this <b>synthetic</b> dataset with no held-out split, and injected fraud carries clearly-encoded signals — so these are <b>in-sample</b> figures confirming the pipeline learns the intended patterns, <b>not</b> generalization estimates. Stratified split + adversarial evaluation are the next steps.</p></div>
     </div>
     <div style="flex:1" class="grid">
       <div class="card"><h3>How it scales</h3><ul>
@@ -846,52 +848,45 @@
       <div class="card" style="border-color:var(--b)"><h3 style="color:var(--b)">Future roadmap</h3><ul>
         <li>Online / incremental learning</li><li>Graph-based fraud-ring detection</li>
         <li>Advanced behavioral profiling</li><li>Agent-assisted investigation</li>
-        <li>Continuous monitoring + automated feedback loop</li><li>Cross-merchant fraud intelligence</li></ul></div>
+        <li>Continuous monitoring + feedback loop</li><li>Cross-merchant fraud intelligence</li></ul></div>
     </div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
 
-<!-- ============ SLIDE 16 — DEMO FLOW ============ -->
+<!-- 18 DEMO FLOW -->
 <section class="slide">
   <div class="gearmark"><div class="c1">innovate</div><div class="c2">achieve</div><div class="c3">lead</div></div>
-  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s0"></span></div>
+  <div class="hrule"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
   <div class="kicker">Demo Flow</div>
   <h1 class="title">From event to explainable decision</h1>
-
   <div class="content" style="margin-top:22px">
-    <div class="flex" style="flex-wrap:wrap; gap:10px 0; justify-content:center">
+    <div style="display:flex; justify-content:center; align-items:stretch">
       <div class="node y" style="width:150px">1 · Receive txn</div><div class="harrow">→</div>
       <div class="node b" style="width:150px">2 · Publish to Kafka</div><div class="harrow">→</div>
-      <div class="node" style="width:150px">3 · Consume event</div><div class="harrow">→</div>
-      <div class="node" style="width:170px">4 · Retrieve 39-day context</div>
+      <div class="node" style="width:150px">3 · Classify type</div><div class="harrow">→</div>
+      <div class="node" style="width:175px">4 · Retrieve 39-day context</div>
     </div>
-    <div class="flex" style="justify-content:center;margin:2px 0"><span style="color:#9aa3b2">↓</span></div>
-    <div class="flex" style="flex-wrap:wrap; gap:10px 0; justify-content:center">
-      <div class="node" style="width:150px">8 · Explanation (LLM)</div><div class="harrow" style="transform:rotate(180deg)">→</div>
-      <div class="node b" style="width:170px">7 · Vector similarity</div><div class="harrow" style="transform:rotate(180deg)">→</div>
-      <div class="node" style="width:150px">6 · ML risk scoring</div><div class="harrow" style="transform:rotate(180deg)">→</div>
-      <div class="node" style="width:150px">5 · Feature engineering</div>
+    <div style="text-align:center;color:#9aa3b2;margin:4px 0">↓</div>
+    <div style="display:flex; justify-content:center; align-items:stretch">
+      <div class="node r" style="width:170px">8 · Explanation (Bedrock)</div><div class="harrow">←</div>
+      <div class="node b" style="width:170px">7 · Vector similarity</div><div class="harrow">←</div>
+      <div class="node" style="width:150px">6 · ML risk scoring</div><div class="harrow">←</div>
+      <div class="node" style="width:160px">5 · Feature engineering</div>
     </div>
-    <div class="flex" style="justify-content:center;margin:2px 0"><span style="color:#9aa3b2">↓</span></div>
-    <div class="flex" style="flex-wrap:wrap; gap:10px 0; justify-content:center">
+    <div style="text-align:center;color:#9aa3b2;margin:4px 0">↓</div>
+    <div style="display:flex; justify-content:center; align-items:stretch">
       <div class="node navy" style="width:150px">9 · Decision Engine</div><div class="harrow">→</div>
       <div class="node r" style="width:150px">10 · Alert generated</div><div class="harrow">→</div>
       <div class="node b" style="width:150px">11 · Dashboard update</div><div class="harrow">→</div>
-      <div class="node" style="width:170px">12 · Analyst investigates</div>
+      <div class="node" style="width:175px">12 · Analyst investigates</div>
     </div>
-
     <div class="card" style="margin-top:34px;text-align:center;background:var(--navy);border:none">
-      <p style="font-size:19px;color:#fff;font-weight:700;line-height:1.4">
-        “From transaction event → <span style="color:var(--y)">contextual intelligence</span> →
-        <span style="color:var(--b)">explainable risk</span> → <span style="color:var(--r)">real-time decision.</span>”</p>
-    </div>
+      <p style="font-size:19px;color:#fff;font-weight:700;line-height:1.4">"From transaction event → <span style="color:var(--y)">contextual intelligence</span> → <span style="color:var(--b)">explainable risk</span> → <span style="color:var(--r)">real-time decision.</span>"</p></div>
   </div>
-
-  <div class="footer"><span class="syn"><span class="bars"><i></i><i></i><i></i></span></span>
+  <div class="footer"><img class="footmark" src="synchrony-logo.png" alt=""/>
     <div class="bar"><span class="s1"></span><span class="s2"></span><span class="s3"></span></div>
     <div class="bits"><b>BITS</b> Pilani, Pilani Campus</div></div>
 </section>
